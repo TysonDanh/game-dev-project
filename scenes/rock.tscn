@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmkwswr1f64wf"]
+
+[ext_resource type="Texture2D" uid="uid://bd25q38oj2wy7" path="res://assets/sprites/Rocks_Floor_Wall.png" id="1_1di36"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8sxr"]
+radius = 29.274563
+
+[node name="Rock" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1di36")
+region_enabled = true
+region_rect = Rect2(137, 102.5, 64, 62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_t8sxr")
