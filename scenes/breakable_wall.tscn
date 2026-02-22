@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0603fiu7c2yj"]
+
+[ext_resource type="Script" uid="uid://bfnhxawk7iykr" path="res://scripts/breakable_wall.gd" id="1_odehn"]
+[ext_resource type="Texture2D" uid="uid://bd25q38oj2wy7" path="res://assets/sprites/Rocks_Floor_Wall.png" id="2_tc6sb"]
+[ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="3_1leh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4oil"]
+size = Vector2(327, 239)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkyvi"]
+radius = 192.01042
+
+[node name="breakableWall" type="Node2D"]
+script = ExtResource("1_odehn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -129.5)
+shape = SubResource("RectangleShape2D_t4oil")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -120)
+texture = ExtResource("2_tc6sb")
+
+[node name="Interactable" parent="." instance=ExtResource("3_1leh5")]
+interact_name = "Break Wall"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-8, -127)
+shape = SubResource("CircleShape2D_kkyvi")

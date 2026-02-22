@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1jigouybw60h"
-path="res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"
+uid="uid://b6gjea2s8m7ep"
+path="res://.godot/imported/Keys_Lever_Button.png-9ec3085157efb8995525ef6a8256b72e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex"]
+source_file="res://assets/sprites/Keys_Lever_Button.png"
+dest_files=["res://.godot/imported/Keys_Lever_Button.png-9ec3085157efb8995525ef6a8256b72e.ctex"]
 
 [params]
 
