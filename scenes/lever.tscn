@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://bx6ck7eau0n1l"]
+
+[ext_resource type="Texture2D" uid="uid://b6gjea2s8m7ep" path="res://assets/sprites/Keys_Lever_Button.png" id="1_4kwec"]
+[ext_resource type="Script" uid="uid://bxjnywycuulc0" path="res://scripts/lever.gd" id="1_qxmkn"]
+[ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="2_ncfea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxmkn"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(12, 175, 120, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8di2w"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(662, 168, 130, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkrws"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(3, 172, 131, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efr3d"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(134, 172, 131, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3flmr"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(265, 172, 131, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrgq"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(396, 172, 131, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxk16"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(527, 172, 131, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5pcx"]
+atlas = ExtResource("1_4kwec")
+region = Rect2(658, 172, 131, 101)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hio1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxmkn")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8di2w")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkrws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efr3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3flmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxk16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5pcx")
+}],
+"loop": true,
+"name": &"switch",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxmkn"]
+radius = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8di2w"]
+radius = 90.088844
+
+[node name="Lever" type="Area2D"]
+script = ExtResource("1_qxmkn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hio1q")
+animation = &"off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qxmkn")
+
+[node name="Interactable" parent="." instance=ExtResource("2_ncfea")]
+position = Vector2(0, -1)
+interact_name = "[E] Switch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_8di2w")

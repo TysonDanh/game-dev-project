@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bfnhxawk7iykr" path="res://scripts/Breakables/breakable_wall.gd" id="1_odehn"]
 [ext_resource type="Texture2D" uid="uid://bd25q38oj2wy7" path="res://assets/sprites/Rocks_Floor_Wall.png" id="2_tc6sb"]
 [ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="3_1leh5"]
-[ext_resource type="PackedScene" uid="uid://cmkwswr1f64wf" path="res://scenes/rock.tscn" id="4_tc6sb"]
+[ext_resource type="PackedScene" uid="uid://cmkwswr1f64wf" path="res://scenes/Breakable/rock.tscn" id="4_tc6sb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4oil"]
 size = Vector2(63, 239)

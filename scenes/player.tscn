@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqryqt5bndl7i"]
 
-[ext_resource type="Script" uid="uid://dao5o0qp8cpj6" path="res://scripts/Players/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://dao5o0qp8cpj6" path="res://scripts/Players/playerblue.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bips5xxihyr7i" path="res://assets/sprites/Blue_Idle.png" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://bjbqfuaupifjx" path="res://interaction_components/interacting_component.tscn" id="3_qhqgy"]
 
