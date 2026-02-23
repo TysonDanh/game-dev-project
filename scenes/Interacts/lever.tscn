@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx6ck7eau0n1l"]
+[gd_scene format=3 uid="uid://bx6ck7eau0n1l"]
 
 [ext_resource type="Texture2D" uid="uid://b6gjea2s8m7ep" path="res://assets/sprites/Keys_Lever_Button.png" id="1_4kwec"]
-[ext_resource type="Script" uid="uid://bxjnywycuulc0" path="res://scripts/lever.gd" id="1_qxmkn"]
+[ext_resource type="Script" uid="uid://bxjnywycuulc0" path="res://scripts/Interacts/lever.gd" id="1_qxmkn"]
 [ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="2_ncfea"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxmkn"]
@@ -44,7 +44,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"off",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -52,7 +52,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"on",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -73,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t5pcx")
 }],
-"loop": true,
+"loop": false,
 "name": &"switch",
 "speed": 10.0
 }]
@@ -84,19 +84,19 @@ radius = 58.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8di2w"]
 radius = 90.088844
 
-[node name="Lever" type="Area2D"]
+[node name="Lever" type="Area2D" unique_id=1804500831]
 script = ExtResource("1_qxmkn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=594588787]
 sprite_frames = SubResource("SpriteFrames_hio1q")
-animation = &"off"
+animation = &"switch"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846082357]
 shape = SubResource("CircleShape2D_qxmkn")
 
-[node name="Interactable" parent="." instance=ExtResource("2_ncfea")]
+[node name="Interactable" parent="." unique_id=1467009406 instance=ExtResource("2_ncfea")]
 position = Vector2(0, -1)
 interact_name = "[E] Switch"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2014989091]
 shape = SubResource("CircleShape2D_8di2w")

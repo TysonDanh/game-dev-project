@@ -10,12 +10,12 @@ func _ready() -> void:
 	
 func _on_interact():
 		toggle_level()
-		print("interacted")
 		
 func toggle_level():
 	if lever_on:
 		return
 	lever_on = true
 	animated_Sprite2D.play("switch")
+	await animated_Sprite2D.animation_finished
 	animated_Sprite2D.play("on")
 	

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bvmfj6wstrmga"]
+
+[ext_resource type="Texture2D" uid="uid://b6gjea2s8m7ep" path="res://assets/sprites/Keys_Lever_Button.png" id="1_76ko4"]
+[ext_resource type="Script" uid="uid://kxwwjrdcy7l3" path="res://scripts/Interacts/button.gd" id="1_en03v"]
+[ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="2_en03v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g03w"]
+atlas = ExtResource("1_76ko4")
+region = Rect2(0, 271, 100, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb444"]
+atlas = ExtResource("1_76ko4")
+region = Rect2(100, 271, 100, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1stn"]
+atlas = ExtResource("1_76ko4")
+region = Rect2(200, 271, 100, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agrqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g03w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb444")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1stn")
+}],
+"loop": false,
+"name": &"Pressed",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41rcl"]
+radius = 33.06055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0y28y"]
+radius = 70.00714
+
+[node name="button" type="Area2D" unique_id=1729993400]
+script = ExtResource("1_en03v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1761933984]
+sprite_frames = SubResource("SpriteFrames_agrqu")
+animation = &"Pressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1725850664]
+shape = SubResource("CircleShape2D_41rcl")
+
+[node name="Interactable" parent="." unique_id=1175822504 instance=ExtResource("2_en03v")]
+interact_name = "[E] Press Button"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=579118182]
+shape = SubResource("CircleShape2D_0y28y")
