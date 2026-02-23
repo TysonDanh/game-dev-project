@@ -69,7 +69,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = dash_direction * dash_speed + dash_curve.sample(current_distance / dash_max_distance)
 			velocity.y = 0
-			
+	
+	#Dash timer
 	if dash_timer > 0:
 		dash_timer -= delta
 		
