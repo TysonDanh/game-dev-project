@@ -1,12 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://cog7lc3vfxfd7"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://cog7lc3vfxfd7"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://dqryqt5bndl7i" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://b2dxwu4cu12ey" path="res://scripts/Players/camera_2d.gd" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bd25q38oj2wy7" path="res://assets/sprites/Rocks_Floor_Wall.png" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://b0603fiu7c2yj" path="res://scenes/breakable_wall.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bqo7qhsaryfry" path="res://scenes/breakable_floor.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://b0603fiu7c2yj" path="res://scenes/Breakable/breakable_wall.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bqo7qhsaryfry" path="res://scenes/Breakable/breakable_floor.tscn" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://yyukwsxjuik2" path="res://scripts/Breakables/breakable_floor.gd" id="6_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://cmkwswr1f64wf" path="res://scenes/rock.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cmkwswr1f64wf" path="res://scenes/Breakable/rock.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bx6ck7eau0n1l" path="res://scenes/lever.tscn" id="8_gee14"]
 
 [sub_resource type="Curve" id="Curve_u5sy4"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.46067423), -2.1810968, 0.0, 0, 0]
@@ -200,7 +205,11 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [node name="Game" type="Node2D" unique_id=1382798564]
 
+<<<<<<< Updated upstream
 [node name="Player" parent="." unique_id=1938031663 instance=ExtResource("1_uwrxv")]
+=======
+[node name="Playerblue" parent="." instance=ExtResource("1_uwrxv")]
+>>>>>>> Stashed changes
 position = Vector2(-10, -86)
 run_speed = 600.0
 dash_curve = SubResource("Curve_u5sy4")
@@ -233,3 +242,6 @@ position = Vector2(-675, -2)
 position = Vector2(351, -48)
 script = ExtResource("6_u5sy4")
 rock_scene = ExtResource("7_u5sy4")
+
+[node name="Lever" parent="." instance=ExtResource("8_gee14")]
+position = Vector2(-292, -57)
