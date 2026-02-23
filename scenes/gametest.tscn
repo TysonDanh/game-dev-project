@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cml2anojnr32u"]
+
+[ext_resource type="PackedScene" uid="uid://dqryqt5bndl7i" path="res://scenes/player.tscn" id="1_6ycye"]
+[ext_resource type="PackedScene" uid="uid://bqo7qhsaryfry" path="res://scenes/Breakable/breakable_floor.tscn" id="2_1dvly"]
+[ext_resource type="PackedScene" uid="uid://b0603fiu7c2yj" path="res://scenes/Breakable/breakable_wall.tscn" id="3_i0h8x"]
+[ext_resource type="PackedScene" uid="uid://bx6ck7eau0n1l" path="res://scenes/lever.tscn" id="4_t82je"]
+[ext_resource type="Script" uid="uid://b2dxwu4cu12ey" path="res://scripts/Players/camera_2d.gd" id="5_1dvly"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82nuq"]
+normal = Vector2(-0.008849211, -0.99996084)
+distance = -80.961426
+
+[node name="Gametest" type="Node2D" unique_id=1077896352]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=967951682]
+script = ExtResource("5_1dvly")
+
+[node name="Player" parent="." unique_id=1862546595 instance=ExtResource("1_6ycye")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1790058552]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2130274656]
+shape = SubResource("WorldBoundaryShape2D_82nuq")
+
+[node name="breakable_floor" parent="." unique_id=1361344417 instance=ExtResource("2_1dvly")]
+position = Vector2(252, 41)
+
+[node name="breakableWall" parent="." unique_id=230055462 instance=ExtResource("3_i0h8x")]
+position = Vector2(-455, 87)
+
+[node name="Lever" parent="." unique_id=1994565996 instance=ExtResource("4_t82je")]
+position = Vector2(-189, 36)

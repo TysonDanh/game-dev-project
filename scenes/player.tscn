@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqryqt5bndl7i"]
+[gd_scene format=3 uid="uid://dqryqt5bndl7i"]
 
 [ext_resource type="Script" uid="uid://dao5o0qp8cpj6" path="res://scripts/Players/playerblue.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bips5xxihyr7i" path="res://assets/sprites/Blue_Idle.png" id="2_g2els"]
@@ -57,19 +57,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur7pv"]
 radius = 43.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1426815937]
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880643034]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.4540565
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192442230]
 position = Vector2(6, 34)
 shape = SubResource("CircleShape2D_ur7pv")
 
-[node name="interactingComponent" parent="." instance=ExtResource("3_qhqgy")]
+[node name="interactingComponent" parent="." unique_id=24695621 instance=ExtResource("3_qhqgy")]
 position = Vector2(11, -45)

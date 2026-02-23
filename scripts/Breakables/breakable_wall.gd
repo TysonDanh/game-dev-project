@@ -7,7 +7,6 @@ extends Node2D
 @export var rock_count :=3
 
 func _ready() -> void:
-	
 	interactable.interact = _on_interact
 	
 
