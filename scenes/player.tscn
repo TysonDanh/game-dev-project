@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bips5xxihyr7i" path="res://assets/sprites/Blue_Idle.png" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://bjbqfuaupifjx" path="res://interaction_components/interacting_component.tscn" id="3_qhqgy"]
 
+[sub_resource type="Curve" id="Curve_qhqgy"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
 region = Rect2(0, 0, 148, 182)
@@ -59,6 +61,7 @@ radius = 43.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1426815937]
 script = ExtResource("1_g2els")
+dash_curve = SubResource("Curve_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880643034]
 position = Vector2(0, -12)
