@@ -19,6 +19,8 @@ var dash_start_position = 0
 var dash_direction = 0
 var dash_timer = 0
 
+@export var inv: Inv
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
