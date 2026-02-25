@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b2dxwu4cu12ey" path="res://scripts/Players/camera_2d.gd" id="5_1dvly"]
 [ext_resource type="PackedScene" uid="uid://bvmfj6wstrmga" path="res://scenes/Interacts/button.tscn" id="6_i0h8x"]
 [ext_resource type="PackedScene" uid="uid://exs17xv7viwv" path="res://scenes/Interacts/spirit_caged.tscn" id="7_t82je"]
+[ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="8_82nuq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82nuq"]
 normal = Vector2(-0.008849211, -0.99996084)
@@ -38,3 +39,9 @@ position = Vector2(518, 32)
 
 [node name="spirit_caged" parent="." unique_id=852834329 instance=ExtResource("7_t82je")]
 position = Vector2(-723, -15)
+
+[node name="Inventory" type="Node2D" parent="." unique_id=1692260627]
+
+[node name="Door" parent="." unique_id=895583818 instance=ExtResource("8_82nuq")]
+show_behind_parent = true
+position = Vector2(900, -47)
