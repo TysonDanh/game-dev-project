@@ -4,51 +4,39 @@
 [ext_resource type="Script" uid="uid://bxjnywycuulc0" path="res://scripts/Interacts/lever.gd" id="1_qxmkn"]
 [ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="2_ncfea"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxmkn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jbb5"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(12, 175, 120, 98)
+region = Rect2(658, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8di2w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkhen"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(662, 168, 130, 146)
+region = Rect2(3, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkrws"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vmhg"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(3, 172, 131, 101)
+region = Rect2(134, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_efr3d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg4tx"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(134, 172, 131, 101)
+region = Rect2(265, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3flmr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_saspn"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(265, 172, 131, 101)
+region = Rect2(396, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_igrgq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_52wm7"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(396, 172, 131, 101)
+region = Rect2(527, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jxk16"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6kyr"]
 atlas = ExtResource("1_4kwec")
-region = Rect2(527, 172, 131, 101)
+region = Rect2(658, 170, 131, 102)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t5pcx"]
-atlas = ExtResource("1_4kwec")
-region = Rect2(658, 172, 131, 101)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hio1q"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_crejx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qxmkn")
-}],
-"loop": true,
-"name": &"off",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8di2w")
+"texture": SubResource("AtlasTexture_3jbb5")
 }],
 "loop": true,
 "name": &"on",
@@ -56,22 +44,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dkrws")
+"texture": SubResource("AtlasTexture_tkhen")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_efr3d")
+"texture": SubResource("AtlasTexture_0vmhg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3flmr")
+"texture": SubResource("AtlasTexture_gg4tx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_igrgq")
+"texture": SubResource("AtlasTexture_saspn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jxk16")
+"texture": SubResource("AtlasTexture_52wm7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t5pcx")
+"texture": SubResource("AtlasTexture_v6kyr")
 }],
 "loop": false,
 "name": &"switch",
@@ -88,7 +76,7 @@ radius = 90.088844
 script = ExtResource("1_qxmkn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=594588787]
-sprite_frames = SubResource("SpriteFrames_hio1q")
+sprite_frames = SubResource("SpriteFrames_crejx")
 animation = &"switch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846082357]
