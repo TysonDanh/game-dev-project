@@ -80,3 +80,7 @@ func _physics_process(delta: float) -> void:
 
 func collect(item: InvItem):
 	return inv.insert(item)
+
+func remove(_index: int):
+	return inv.drop()
+	

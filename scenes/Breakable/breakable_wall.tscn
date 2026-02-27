@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0603fiu7c2yj"]
+[gd_scene format=3 uid="uid://b0603fiu7c2yj"]
 
 [ext_resource type="Script" uid="uid://bfnhxawk7iykr" path="res://scripts/Breakables/breakable_wall.gd" id="1_odehn"]
 [ext_resource type="Texture2D" uid="uid://bd25q38oj2wy7" path="res://assets/sprites/Rocks_Floor_Wall.png" id="2_tc6sb"]
@@ -11,23 +11,23 @@ size = Vector2(63, 239)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kkyvi"]
 radius = 135.07405
 
-[node name="breakableWall" type="Node2D"]
+[node name="breakableWall" type="StaticBody2D" unique_id=1592092887]
 script = ExtResource("1_odehn")
 rock_scene = ExtResource("4_tc6sb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646445088]
 position = Vector2(0.5, -129.5)
 shape = SubResource("RectangleShape2D_t4oil")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872169668]
 position = Vector2(0, -120)
 texture = ExtResource("2_tc6sb")
 region_enabled = true
 region_rect = Rect2(269, 3.5, 65, 226.5)
 
-[node name="Interactable" parent="." instance=ExtResource("3_1leh5")]
+[node name="Interactable" parent="." unique_id=805763466 instance=ExtResource("3_1leh5")]
 interact_name = "[E] Break Wall"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=417516112]
 position = Vector2(1, -130)
 shape = SubResource("CircleShape2D_kkyvi")

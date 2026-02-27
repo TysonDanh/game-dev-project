@@ -11,7 +11,7 @@ size = Vector2(259.5, 70)
 [sub_resource type="CircleShape2D" id="CircleShape2D_5xqbb"]
 radius = 140.05713
 
-[node name="breakable_floor" type="Node2D" unique_id=1636253466]
+[node name="breakable_floor" type="StaticBody2D" unique_id=1342926620]
 script = ExtResource("1_3ox53")
 rock_scene = ExtResource("2_6ykop")
 

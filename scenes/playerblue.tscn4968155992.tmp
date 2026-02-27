@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dqryqt5bndl7i"]
+
+[ext_resource type="Script" uid="uid://dao5o0qp8cpj6" path="res://scripts/Players/playerblue.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bips5xxihyr7i" path="res://assets/sprites/Blue_Idle.png" id="2_g2els"]
+[ext_resource type="Resource" uid="uid://djck2r357x8eb" path="res://Inventory/items/playerblueinv.tres" id="2_x1ier"]
+[ext_resource type="PackedScene" uid="uid://bjbqfuaupifjx" path="res://interaction_components/interacting_component.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bcrjaniidpk6e" path="res://UI/inv_ui.tscn" id="5_geh87"]
+
+[sub_resource type="Curve" id="Curve_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 148, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(148, 0, 148, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(296, 0, 148, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(444, 0, 148, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_g2els")
+region = Rect2(592, 0, 148, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_g2els")
+region = Rect2(740, 0, 148, 182)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ur7pv"]
+radius = 43.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1426815937 groups=["players"]]
+script = ExtResource("1_g2els")
+walk_speed = null
+run_speed = null
+acceleration = null
+deceleration = null
+jump_force = null
+jump_deceleration = null
+dash_speed = null
+dash_max_distance = null
+dash_curve = SubResource("Curve_qhqgy")
+dash_cooldown = null
+inv = ExtResource("2_x1ier")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880643034]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_3vyb7")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.4540565
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192442230]
+position = Vector2(6, 34)
+shape = SubResource("CircleShape2D_ur7pv")
+
+[node name="interactingComponent" parent="." unique_id=24695621 instance=ExtResource("3_qhqgy")]
+position = Vector2(11, -45)
+
+[node name="Inv_UI" parent="." unique_id=540233511 instance=ExtResource("5_geh87")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -573.0
+offset_top = -150.0
+offset_right = 574.0
+offset_bottom = 491.0
+grow_horizontal = 1
+grow_vertical = 1
