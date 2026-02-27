@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7nvjg4jak7mo"]
 
-[ext_resource type="Script" uid="uid://csy57bfimasty" path="res://scripts/Inventory/inv_slot.gd" id="1_4n74j"]
+[ext_resource type="Script" uid="uid://csy57bfimasty" path="res://scripts/Inventory/inv_slotUI.gd" id="1_4n74j"]
 [ext_resource type="Texture2D" uid="uid://bp43ejhj8q75v" path="res://assets/sprites/inventory-slot.png" id="1_ywd0c"]
 
 [node name="inv_slot" type="Panel" unique_id=1321142978]
@@ -18,4 +18,24 @@ scale = Vector2(5.0625, 4.875)
 texture = ExtResource("1_ywd0c")
 centered = false
 
-[node name="item_display" type="Sprite2D" parent="." unique_id=1936360008]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=431834180]
+clip_contents = true
+custom_minimum_size = Vector2(81, 78)
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 77.0
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1193156238]
+layout_mode = 2
+
+[node name="item_display" type="TextureRect" parent="CenterContainer/Panel" unique_id=552233307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
