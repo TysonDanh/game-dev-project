@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cdk827s6pi6th"]
+
+[ext_resource type="Script" uid="uid://df4kdr5tv5oi4" path="res://scripts/BuildController/BuildController.gd" id="1_4bxia"]
+[ext_resource type="Resource" uid="uid://djck2r357x8eb" path="res://Inventory/items/playerblueinv.tres" id="2_hv5qu"]
+[ext_resource type="Resource" uid="uid://didebdyiw70ol" path="res://Inventory/items/rock.tres" id="3_vyfxu"]
+[ext_resource type="PackedScene" uid="uid://b0603fiu7c2yj" path="res://scenes/Breakable/breakable_wall.tscn" id="4_3o4ul"]
+[ext_resource type="PackedScene" uid="uid://bqo7qhsaryfry" path="res://scenes/Breakable/breakable_floor.tscn" id="5_8h6re"]
+
+[node name="BuildController" type="Node2D" unique_id=1993715933]
+script = ExtResource("1_4bxia")
+inv = ExtResource("2_hv5qu")
+rock_item = ExtResource("3_vyfxu")
+wall_scene = ExtResource("4_3o4ul")
+floor_scene = ExtResource("5_8h6re")
+grid_size = 0

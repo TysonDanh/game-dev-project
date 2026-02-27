@@ -8,7 +8,7 @@ extends Area2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
-func _on_interact(interactor):
+func _on_interact():
 		toggle_level()
 		
 func toggle_level():

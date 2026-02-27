@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bvmfj6wstrmga" path="res://scenes/Interacts/button.tscn" id="6_i0h8x"]
 [ext_resource type="PackedScene" uid="uid://exs17xv7viwv" path="res://scenes/Interacts/spirit_caged.tscn" id="7_t82je"]
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="8_82nuq"]
+[ext_resource type="PackedScene" uid="uid://cdk827s6pi6th" path="res://scenes/BuildController.tscn" id="9_xe5qx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82nuq"]
 normal = Vector2(-0.008849211, -0.99996084)
@@ -26,7 +27,7 @@ script = ExtResource("5_1dvly")
 shape = SubResource("WorldBoundaryShape2D_82nuq")
 
 [node name="breakable_floor" parent="." unique_id=1361344417 instance=ExtResource("2_1dvly")]
-position = Vector2(252, 41)
+position = Vector2(-1013, -25)
 
 [node name="breakableWall" parent="." unique_id=230055462 instance=ExtResource("3_i0h8x")]
 position = Vector2(-455, 87)
@@ -45,3 +46,9 @@ position = Vector2(-723, -15)
 [node name="Door" parent="." unique_id=895583818 instance=ExtResource("8_82nuq")]
 show_behind_parent = true
 position = Vector2(900, -47)
+
+[node name="Placed" type="Node2D" parent="." unique_id=1421731800]
+
+[node name="BuildController" parent="." unique_id=1993715933 instance=ExtResource("9_xe5qx")]
+
+[node name="Ghost" type="Node2D" parent="BuildController" unique_id=1502159431]
