@@ -36,14 +36,26 @@ func close():
 	visible = false
 	is_open = false
 	
+	
+const DROP_SCENES: Dictionary = {
+	"rock": preload("res://scenes/Breakable/rock.tscn"),
+	"key": preload("res://scenes/Interacts/key.tscn")
+}
+
 func dropitem(item: InvItem, position: Vector2):
 	if item == null:
 		return
-	var rock_scene = preload("res://scenes/Breakable/rock.tscn")
-	var rock_instance = rock_scene.instantiate()
-	rock_instance.item = item
-	rock_instance.position = position
-	get_tree().current_scene.add_child(rock_instance)
+	if not DROP_SCENES.has(item.name):
+		push_warning("No scene for: " + str(item.name))
+		return
+	var instance = DROP_SCENES[item.name].instantiate()
+	instance.item = item
+	instance.position = position
+	get_tree().current_scene.add_child(instance)
+
+	
+	
+
 
 
 	

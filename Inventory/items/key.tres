@@ -9,6 +9,6 @@ region = Rect2(217, 257.5, 47, 79)
 
 [resource]
 script = ExtResource("1_duyyw")
-name = "Key"
+name = "key"
 texture = SubResource("AtlasTexture_3661o")
 metadata/_custom_type_script = "uid://388trjjfhwwm"

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://coflpnc87r6im"]
+
+[ext_resource type="Texture2D" uid="uid://b6gjea2s8m7ep" path="res://assets/sprites/Keys_Lever_Button.png" id="1_dvfyy"]
+[ext_resource type="Script" uid="uid://by56oy6cb1bix" path="res://scripts/Interacts/key.gd" id="1_ftjy4"]
+[ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="2_ftjy4"]
+[ext_resource type="Resource" uid="uid://cgii5lhhk4h30" path="res://Inventory/items/key.tres" id="2_yljeg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yljeg"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(0, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1bjy"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(46, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u7n5"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(92, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gi5i"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(138, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjn8k"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(184, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dafwm"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(230, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8da5t"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(276, 91, 46, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfeuv"]
+atlas = ExtResource("1_dvfyy")
+region = Rect2(322, 91, 46, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfo1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yljeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1bjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u7n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gi5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjn8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dafwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8da5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfeuv")
+}],
+"loop": true,
+"name": &"key",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_137ry"]
+radius = 22.0
+height = 82.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1ru7"]
+radius = 20.0
+height = 82.0
+
+[node name="key" type="Area2D" unique_id=1591075981]
+script = ExtResource("1_ftjy4")
+item = ExtResource("2_yljeg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1196931651]
+sprite_frames = SubResource("SpriteFrames_gfo1m")
+animation = &"key"
+frame_progress = 0.8754547
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244863567]
+shape = SubResource("CapsuleShape2D_137ry")
+
+[node name="Interactable" parent="." unique_id=1367477917 instance=ExtResource("2_ftjy4")]
+interact_name = "[E] Pick up Key"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=88591509]
+shape = SubResource("CapsuleShape2D_m1ru7")
