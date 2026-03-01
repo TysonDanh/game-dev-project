@@ -14,13 +14,13 @@ func update_slots():
 		slots[i].update(inv.slots[i])
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("Inventory"):
+	if Input.is_action_just_pressed("Inventory_blue"):
 		if is_open:
 			close()
 		else:
 			open()
 			
-	if Input.is_action_just_pressed("drop"):
+	if Input.is_action_just_pressed("drop_blue"):
 		var removeitem = inv.drop()
 		if removeitem != null:
 			update_slots()

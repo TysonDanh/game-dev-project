@@ -29,17 +29,17 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump_blue") and is_on_floor():
 		velocity.y = jump_force
 	
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+	if Input.is_action_just_released("jump_blue") and velocity.y < 0:
 		velocity.y *= jump_deceleration
 		
 	
 		
 	#RUNNING Movement
 	var speed
-	if Input.is_action_pressed("run"):
+	if Input.is_action_pressed("run_blue"):
 		speed = run_speed
 	else:
 		speed = walk_speed
@@ -49,14 +49,14 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#WALKING Movement
-	var direction := Input.get_axis("left", "right")
+	var direction := Input.get_axis("left_blue", "right_blue")
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 		
 	#DASH Activation
-	if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
+	if Input.is_action_just_pressed("dash_blue") and direction and not is_dashing and dash_timer <= 0:
 		is_dashing = true
 		dash_start_position = position.x
 		dash_direction = direction
