@@ -15,9 +15,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Game Dev Project"
-run/main_scene="uid://cml2anojnr32u"
+run/main_scene="uid://b1xyhl4f02ob4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=2151
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [input]
 
