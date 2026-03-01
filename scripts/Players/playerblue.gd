@@ -34,9 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("jump_blue") and velocity.y < 0:
 		velocity.y *= jump_deceleration
-		
 	
-		
 	#RUNNING Movement
 	var speed
 	if Input.is_action_pressed("run_blue"):
@@ -44,8 +42,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = walk_speed
 	
-	
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#WALKING Movement
@@ -74,8 +70,7 @@ func _physics_process(delta: float) -> void:
 	#Dash timer
 	if dash_timer > 0:
 		dash_timer -= delta
-		
-		
+	
 	move_and_slide()
 
 func collect(item: InvItem):

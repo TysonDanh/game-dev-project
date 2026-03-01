@@ -18,11 +18,15 @@ distance = -80.961426
 
 [node name="Gametest" type="Node2D" unique_id=1077896352]
 
+[node name="Player Red" parent="." unique_id=61868662 groups=["players"] instance=ExtResource("11_1uq2d")]
+position = Vector2(-179, -446)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=967951682]
 script = ExtResource("5_1dvly")
 
 [node name="Player" parent="." unique_id=1862546595 instance=ExtResource("1_6ycye")]
-position = Vector2(285, -261)
+position = Vector2(644, -344)
+inv = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1790058552]
 
@@ -57,6 +61,3 @@ position = Vector2(900, -47)
 [node name="Ghost" type="Node2D" parent="BuildController" unique_id=1502159431]
 
 [node name="key" parent="." unique_id=971357220 instance=ExtResource("10_18hib")]
-
-[node name="Player Red" parent="." unique_id=61868662 instance=ExtResource("11_1uq2d")]
-position = Vector2(-33, -243)
