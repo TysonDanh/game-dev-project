@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Game Dev Project"
-run/main_scene="uid://b1xyhl4f02ob4"
+run/main_scene="uid://cqhpxnpfgsfsb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
