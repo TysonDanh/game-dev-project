@@ -194,6 +194,7 @@ position = Vector2(-1796, 560)
 
 [node name="Door" parent="Interacts" unique_id=895583818 instance=ExtResource("10_8undq")]
 position = Vector2(3230, 593)
+next_level = "res://scenes/Levels/tutorial_room_2.tscn"
 
 [node name="Lever" parent="Interacts" unique_id=1804500831 instance=ExtResource("9_0mddo")]
 position = Vector2(2976, 669)
