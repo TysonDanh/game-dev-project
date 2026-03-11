@@ -635,6 +635,7 @@ position = Vector2(6595, 562)
 
 [node name="button" parent="Interactables" unique_id=1729993400 instance=ExtResource("10_7acw0")]
 position = Vector2(6262, 676)
+doors = NodePath("../Door")
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1588279050]
 position = Vector2(1007, 552)
@@ -658,7 +659,7 @@ position = Vector2(387.61865, 69.45636)
 polygon = PackedVector2Array(-0.61865234, 0.54364014, 181.38135, -0.45635986, 181.38135, 52.54364, 1.3813477, 52.54364)
 
 [node name="Player" parent="." unique_id=1426815937 instance=ExtResource("12_nyrn3")]
-position = Vector2(-644, 342)
+position = Vector2(5762, 529)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1454599288]
 position = Vector2(22, -279)

@@ -98,7 +98,6 @@ position = Vector2(1, 25)
 shape = SubResource("ConvexPolygonShape2D_5vs3c")
 
 [node name="Interactable" parent="." unique_id=1350508323 instance=ExtResource("2_f11v2")]
-interact_name = "[E] Open Door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1606868327]
 shape = SubResource("ConvexPolygonShape2D_f11v2")
