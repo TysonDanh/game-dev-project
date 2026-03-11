@@ -672,7 +672,7 @@ position = Vector2(512, -129)
 polygon = PackedVector2Array(4216, 1072, 4396, 1071, 4396, 1128, 4217, 1126)
 
 [node name="Player" parent="." unique_id=1426815937 instance=ExtResource("5_wq2qt")]
-position = Vector2(346, 607)
+position = Vector2(363, 619)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=78727600]
 position = Vector2(22, -279)
