@@ -640,7 +640,10 @@ position = Vector2(6365, 319)
 [node name="spirit_caged" parent="Interactables" unique_id=852834329 instance=ExtResource("10_2bece")]
 position = Vector2(915, 232)
 
-[node name="NPC" parent="Interactables" unique_id=1308221139 instance=ExtResource("14_2bece")]
+[node name="NPC2" parent="Interactables" unique_id=1308221139 instance=ExtResource("14_2bece")]
+position = Vector2(3822, 414)
+
+[node name="NPC" parent="Interactables" unique_id=1787037599 instance=ExtResource("14_2bece")]
 position = Vector2(332, 1047)
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1228329013]

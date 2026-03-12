@@ -14,6 +14,9 @@ var punctuation_time = 0.2
 
 signal finished_displaying()
 
+func _ready():
+	timer.timeout.connect(_on_letter_display_timer_timeout)
+
 func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
@@ -27,27 +30,30 @@ func display_text(text_to_display: String):
 		await resized # wait for y resize
 		custom_minimum_size.y = size.y
 		
-		global_position.x -= size.x / 2
-		global_position.y -= size.y + 24
-		
-		label.text = ""
-		_display_letter()
+	global_position.x -= size.x / 2
+	global_position.y -= size.y + 24
+	
+	label.text = ""
+	letter_index = 0 
+	_display_letter()
 		
 func _display_letter():
-	label.text += text[letter_index]
-	
-	letter_index += 1
-	if letter_index >= text.length():
-		finished_displaying.emit()
-		return
-	
-	match text[letter_index]:
-		"!", ".", ",","?":
-			timer.start(punctuation_time)
-		" ":
-			timer.start(space_time)
-		_:
-			timer.start(letter_time)
+		label.text += text[letter_index]
+		
+		letter_index += 1
+		if letter_index >= text.length():
+			finished_displaying.emit()
+			return
+		
+		
+		var next_char = text[letter_index]
+		match next_char:
+			"!", ".", ",", "?", ":", ";":
+				timer.start(punctuation_time)
+			" ":
+				timer.start(space_time)
+			_:
+				timer.start(letter_time)
 			
 func _on_letter_display_timer_timeout() -> void:
 	_display_letter()
