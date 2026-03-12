@@ -633,9 +633,11 @@ position = Vector2(667, 1142)
 
 [node name="Door" parent="Interactables" unique_id=895583818 instance=ExtResource("8_q0b7a")]
 position = Vector2(6663, 237)
+next_level = "res://scenes/Levels/tutorial_room_v_2_2.tscn"
 
 [node name="Lever" parent="Interactables" unique_id=1804500831 instance=ExtResource("9_w5s5l")]
 position = Vector2(6365, 319)
+doors = NodePath("../Door")
 
 [node name="spirit_caged" parent="Interactables" unique_id=852834329 instance=ExtResource("10_2bece")]
 position = Vector2(915, 232)
