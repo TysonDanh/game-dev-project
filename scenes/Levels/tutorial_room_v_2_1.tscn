@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="8_q0b7a"]
 [ext_resource type="PackedScene" uid="uid://bx6ck7eau0n1l" path="res://scenes/Interacts/lever.tscn" id="9_w5s5l"]
 [ext_resource type="PackedScene" uid="uid://exs17xv7viwv" path="res://scenes/Interacts/spirit_caged.tscn" id="10_2bece"]
+[ext_resource type="PackedScene" uid="uid://dt1q7q2x0fgk3" path="res://scenes/npc.tscn" id="14_2bece"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wj1k3"]
 texture = ExtResource("4_6a5ac")
@@ -639,6 +640,9 @@ position = Vector2(6365, 319)
 [node name="spirit_caged" parent="Interactables" unique_id=852834329 instance=ExtResource("10_2bece")]
 position = Vector2(915, 232)
 
+[node name="NPC" parent="Interactables" unique_id=1308221139 instance=ExtResource("14_2bece")]
+position = Vector2(332, 1047)
+
 [node name="Foreground" type="Node2D" parent="." unique_id=1228329013]
 position = Vector2(1007, 552)
 
@@ -672,7 +676,7 @@ position = Vector2(512, -129)
 polygon = PackedVector2Array(4216, 1072, 4396, 1071, 4396, 1128, 4217, 1126)
 
 [node name="Player" parent="." unique_id=1426815937 instance=ExtResource("5_wq2qt")]
-position = Vector2(363, 619)
+position = Vector2(-321, 1057)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=78727600]
 position = Vector2(22, -279)

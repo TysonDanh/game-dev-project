@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://c7nvjg4jak7mo"]
 
 [ext_resource type="Script" uid="uid://csy57bfimasty" path="res://scripts/Inventory/inv_slotUI.gd" id="1_4n74j"]
-[ext_resource type="Texture2D" uid="uid://bp43ejhj8q75v" path="res://assets/sprites/inventory-slot.png" id="1_ywd0c"]
+[ext_resource type="Texture2D" uid="uid://c65s3qdrsk35a" path="res://assets/Tutorial_HUD_V01/Tutorial_HUD_V01/Inventory_Banner_Slot_Selection.png" id="2_4n74j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jh2n"]
+atlas = ExtResource("2_4n74j")
+region = Rect2(95.5, 228.5, 80.983826, 81.43164)
 
 [node name="inv_slot" type="Panel" unique_id=1321142978]
 self_modulate = Color(1, 1, 1, 0)
@@ -13,9 +17,10 @@ offset_bottom = 79.0
 script = ExtResource("1_4n74j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=828138652]
+texture_filter = 1
 position = Vector2(-1, -1)
-scale = Vector2(5.0625, 4.875)
-texture = ExtResource("1_ywd0c")
+scale = Vector2(1.0249999, 0.9876544)
+texture = SubResource("AtlasTexture_1jh2n")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=431834180]

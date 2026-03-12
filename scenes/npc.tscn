@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dt1q7q2x0fgk3"]
+
+[ext_resource type="Script" uid="uid://bn7qn62lm8t27" path="res://scripts/Players/npc.gd" id="1_rv78h"]
+[ext_resource type="Texture2D" uid="uid://dtmyl68mvfhna" path="res://assets/sprites/Messenger_Tall_Float.png" id="2_7n8xq"]
+[ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="3_4wlns"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl2vt"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(0, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwkja"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(90, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tygy"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(180, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sptji"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(270, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4e37"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(360, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h837"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(450, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl1un"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(540, 0, 90, 172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuru7"]
+atlas = ExtResource("2_7n8xq")
+region = Rect2(630, 0, 90, 172)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nyaq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl2vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwkja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tygy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sptji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4e37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h837")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl1un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuru7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gbmn"]
+radius = 163.00307
+
+[node name="NPC" type="CharacterBody2D" unique_id=1308221139]
+script = ExtResource("1_rv78h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=147841600]
+sprite_frames = SubResource("SpriteFrames_nyaq3")
+animation = &"idle"
+frame_progress = 0.39580157
+
+[node name="Interactable" parent="." unique_id=1422027343 instance=ExtResource("3_4wlns")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=784829608]
+position = Vector2(9, 15)
+shape = SubResource("CircleShape2D_8gbmn")
