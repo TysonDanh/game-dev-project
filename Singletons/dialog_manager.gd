@@ -15,6 +15,8 @@ func start_dialog(position: Vector2, lines: Array[String]):
 	if is_dialog_active:
 		return
 	
+	dialog_lines = lines.duplicate()
+	current_line_index = 0
 	dialog_lines = lines
 	text_box_position = position
 	_show_text_box()
@@ -26,8 +28,7 @@ func _show_text_box():
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
 	
-	var offset = Vector2(-160, -270)
-	text_box.global_position = text_box_position + offset
+	text_box.global_position = text_box_position
 	
 	text_box.display_text(dialog_lines[current_line_index])
 	can_advance_line = false
@@ -47,9 +48,16 @@ func _unhandled_input(event):
 		if current_line_index >= dialog_lines.size():
 			is_dialog_active = false
 			current_line_index = 0
+			dialog_lines.clear()
+			text_box = null
 			return
 			
 		_show_text_box()
+
+func dialog_finished():
+	is_dialog_active = false
+	current_line_index = 0
+	text_box = null
 	
 	
 	

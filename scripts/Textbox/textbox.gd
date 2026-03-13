@@ -2,6 +2,7 @@ extends MarginContainer
 
 @onready var label = $MarginContainer/Label
 @onready var timer = $LetterDisplayTimer
+@onready var auto_close_timer = Timer.new()
 
 const MAX_WIDTH = 256
 
@@ -16,12 +17,15 @@ signal finished_displaying()
 
 func _ready():
 	timer.timeout.connect(_on_letter_display_timer_timeout)
+	auto_close_timer.one_shot = true
+	auto_close_timer.wait_time = 5.0
+	auto_close_timer.timeout.connect(_on_auto_close_timeout)
+	add_child(auto_close_timer)
 
 func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
 	
-	await resized
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	
 	if size.x > MAX_WIDTH:
@@ -30,8 +34,8 @@ func display_text(text_to_display: String):
 		await resized # wait for y resize
 		custom_minimum_size.y = size.y
 		
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 24
+	global_position.x -= size.x / 2.1
+	global_position.y -= size.y + 90
 	
 	label.text = ""
 	letter_index = 0 
@@ -43,6 +47,7 @@ func _display_letter():
 		letter_index += 1
 		if letter_index >= text.length():
 			finished_displaying.emit()
+			auto_close_timer.start()
 			return
 		
 		
@@ -57,3 +62,7 @@ func _display_letter():
 			
 func _on_letter_display_timer_timeout() -> void:
 	_display_letter()
+	
+func _on_auto_close_timeout():
+	DialogManager.dialog_finished()
+	queue_free()

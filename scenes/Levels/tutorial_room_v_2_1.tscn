@@ -642,12 +642,6 @@ doors = NodePath("../Door")
 [node name="spirit_caged" parent="Interactables" unique_id=852834329 instance=ExtResource("10_2bece")]
 position = Vector2(915, 232)
 
-[node name="NPC2" parent="Interactables" unique_id=1308221139 instance=ExtResource("14_2bece")]
-position = Vector2(3822, 414)
-
-[node name="NPC" parent="Interactables" unique_id=1787037599 instance=ExtResource("14_2bece")]
-position = Vector2(332, 1047)
-
 [node name="Foreground" type="Node2D" parent="." unique_id=1228329013]
 position = Vector2(1007, 552)
 
@@ -680,8 +674,18 @@ polygon = PackedVector2Array(2734, 747, 2914, 746, 2914, 803, 2735, 801)
 position = Vector2(512, -129)
 polygon = PackedVector2Array(4216, 1072, 4396, 1071, 4396, 1128, 4217, 1126)
 
-[node name="Player" parent="." unique_id=1426815937 instance=ExtResource("5_wq2qt")]
+[node name="Characters" type="Node2D" parent="." unique_id=58432218]
+
+[node name="Player" parent="Characters" unique_id=1426815937 instance=ExtResource("5_wq2qt")]
 position = Vector2(-321, 1057)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=78727600]
+[node name="Camera2D" type="Camera2D" parent="Characters/Player" unique_id=78727600]
 position = Vector2(22, -279)
+
+[node name="NPC" parent="Characters" unique_id=1787037599 instance=ExtResource("14_2bece")]
+position = Vector2(332, 1047)
+lines = Array[String](["Hello, testing dialog"])
+
+[node name="NPC2" parent="Characters" unique_id=1308221139 instance=ExtResource("14_2bece")]
+position = Vector2(3822, 414)
+lines = Array[String](["Same test, other NPC here"])
