@@ -19,7 +19,11 @@ func _on_interact():
 		rock.global_position = global_position + Vector2(randf_range(-16, 16), randf_range(-16, 16))
 		get_parent().add_child(rock)
 		
-		rock.apply_impulse(Vector2(randf_range(-100,100), randf_range(-200,-50)))
+		rock.apply_impulse(Vector2.ZERO, Vector2(randf_range(-100, 100), randf_range(-200, -50)))
+		
+		if rock is CanvasItem:
+			rock.z_as_relative = false
+			rock.z_index = 50
 		
 		queue_free()
 	

@@ -113,8 +113,8 @@ func _try_place() -> void:
 	# Place using world position.
 	placed.global_position = snapped_world_pos
 	placed.global_rotation = ghost.global_rotation
-
-	# Visible + brting to front
+		
+	# Visible + bring to front
 	_force_render(placed, 40, 1.0)
 
 	# Debug (remove later)
