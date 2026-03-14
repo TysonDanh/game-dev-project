@@ -72,6 +72,10 @@ func _refresh_ghost() -> void:
 	var interact := ghost.find_child("Interactable", true, false)
 	if interact:
 		interact.queue_free()
+		
+	var collision := ghost.find_child("CollisionShape2D", true, false)
+	if collision:
+		collision.queue_free() 
 
 	# Ghost appearance + bring to front
 	_force_render(ghost, 50, 0.35)
