@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bps1dvljdhd6i"
-path="res://.godot/imported/PixelOperator8-Bold.ttf-74faf550739674ad3170f08e646e0614.fontdata"
+uid="uid://cdx45ofj4duk5"
+path="res://.godot/imported/Vincendo-Italic.woff2-d41bbf7b84b5376ac0725e92bbbf9d2e.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/PixelOperator8-Bold.ttf"
-dest_files=["res://.godot/imported/PixelOperator8-Bold.ttf-74faf550739674ad3170f08e646e0614.fontdata"]
+source_file="res://assets/fonts/Vincendo_Font_0_99/Web Open Font Format (.woff)/Vincendo-Italic.woff2"
+dest_files=["res://.godot/imported/Vincendo-Italic.woff2-d41bbf7b84b5376ac0725e92bbbf9d2e.fontdata"]
 
 [params]
 

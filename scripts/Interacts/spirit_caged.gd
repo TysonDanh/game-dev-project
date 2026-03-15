@@ -13,8 +13,8 @@ func _ready() -> void:
 	
 func _on_interact():
 	sprite_2d.visible = false
-	
 	animated_sprite_2d.visible = true
 	animated_sprite_2d.play("break_cage")
+	get_tree().call_group("hud", "spirit_saved")
 	
 	

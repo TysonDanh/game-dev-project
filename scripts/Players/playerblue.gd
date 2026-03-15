@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 
-@export var walk_speed = 375.0
+@export var walk_speed = 650.0
 @export var run_speed = 600.0
 @export_range(0, 1) var acceleration = 0.15
 @export_range(0, 1) var deceleration = 0.15
 
 @export var jump_force = -700.0
-@export_range (0, 1) var jump_deceleration = 0.5
+@export_range (0, 1) var jump_deceleration = 0.3
 
 @export var dash_speed = 1000.0
 @export var dash_max_distance = 300.0
@@ -21,6 +21,8 @@ var dash_timer = 0
 
 # Inventory
 @export var inv: Inv
+
+var spirit_counter = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -83,4 +85,10 @@ func collect(item: InvItem):
 
 func remove(_index: int):
 	return inv.drop()
+
+
+
+
+func set_spirit(new_spirit_count: int) -> void:
+	spirit_counter = new_spirit_count
 	

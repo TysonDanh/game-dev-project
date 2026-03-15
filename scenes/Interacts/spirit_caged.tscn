@@ -75,7 +75,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsabc"]
 radius = 114.01754
 
-[node name="spirit_caged" type="Node2D" unique_id=852834329]
+[node name="spirit_caged" type="Area2D" unique_id=885438660 groups=["spirits"]]
 script = ExtResource("1_foju2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505049229]

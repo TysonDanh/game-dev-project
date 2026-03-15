@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cfl18xespjbfb"]
+
+[ext_resource type="Script" uid="uid://bwjeqtypdcm6q" path="res://scripts/ghostobject.gd" id="1_5xbgp"]
+[ext_resource type="Texture2D" uid="uid://bd25q38oj2wy7" path="res://assets/sprites/Rocks_Floor_Wall.png" id="2_dg2vy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owikr"]
+atlas = ExtResource("2_dg2vy")
+region = Rect2(1.6841202, 165.68411, 262.58047, 64.31589)
+
+[node name="ghostfloor" type="Node2D" unique_id=589440018]
+script = ExtResource("1_5xbgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1822223540]
+texture = SubResource("AtlasTexture_owikr")

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bvr3bjdbc5qeu"]
+
+[ext_resource type="Script" uid="uid://1bxjlkru4fa6" path="res://scripts/Interacts/spirit_counter.gd" id="1_hl8nc"]
+[ext_resource type="Texture2D" uid="uid://cqb71kg3d7ou6" path="res://assets/Tutorial_HUD_V01/Tutorial_HUD_V01/Text_Objects_Counter.png" id="1_spdlq"]
+[ext_resource type="FontFile" uid="uid://dj1fk8scgndds" path="res://assets/fonts/Vincendo_Font_0_99/Web Open Font Format (.woff)/Vincendo-Regular.woff2" id="3_ddokh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl8nc"]
+atlas = ExtResource("1_spdlq")
+region = Rect2(362.5, -0.13636112, 182.5, 185.28993)
+
+[node name="spirit_counter" type="Control" unique_id=320775854 groups=["hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hl8nc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=908904740]
+texture_filter = 1
+layout_mode = 0
+offset_right = 201.0
+offset_bottom = 180.0
+texture = SubResource("AtlasTexture_hl8nc")
+
+[node name="spirit_counter" type="Label" parent="NinePatchRect" unique_id=1451858683]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 176.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0.8156863, 0.85882354, 0.9843137, 1)
+theme_override_fonts/font = ExtResource("3_ddokh")
+theme_override_font_sizes/font_size = 32
+text = "0/1"
+horizontal_alignment = 1
+vertical_alignment = 1

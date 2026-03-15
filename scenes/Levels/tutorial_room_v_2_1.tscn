@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bx6ck7eau0n1l" path="res://scenes/Interacts/lever.tscn" id="9_w5s5l"]
 [ext_resource type="PackedScene" uid="uid://exs17xv7viwv" path="res://scenes/Interacts/spirit_caged.tscn" id="10_2bece"]
 [ext_resource type="PackedScene" uid="uid://dt1q7q2x0fgk3" path="res://scenes/npc.tscn" id="14_2bece"]
+[ext_resource type="PackedScene" uid="uid://cfl18xespjbfb" path="res://scenes/ghostfloor.tscn" id="14_w5s5l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wj1k3"]
 texture = ExtResource("4_6a5ac")
@@ -689,3 +690,6 @@ lines = Array[String](["Hello, testing dialog"])
 [node name="NPC2" parent="Characters" unique_id=1308221139 instance=ExtResource("14_2bece")]
 position = Vector2(3822, 414)
 lines = Array[String](["Same test, other NPC here"])
+
+[node name="ghostfloor" parent="." unique_id=589440018 instance=ExtResource("14_w5s5l")]
+position = Vector2(1434, 642)

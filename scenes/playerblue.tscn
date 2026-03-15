@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://djck2r357x8eb" path="res://Inventory/items/playerblueinv.tres" id="2_x1ier"]
 [ext_resource type="PackedScene" uid="uid://bjbqfuaupifjx" path="res://interaction_components/interacting_component.tscn" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bcrjaniidpk6e" path="res://UI/inv_ui.tscn" id="5_geh87"]
+[ext_resource type="PackedScene" uid="uid://bvr3bjdbc5qeu" path="res://UI/spirit_counter.tscn" id="6_4mwuw"]
 
 [sub_resource type="Curve" id="Curve_qhqgy"]
 
@@ -59,7 +60,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur7pv"]
-radius = 43.0
+radius = 73.24616
 
 [node name="Player" type="CharacterBody2D" unique_id=1426815937 groups=["players"]]
 script = ExtResource("1_g2els")
@@ -74,11 +75,11 @@ autoplay = "Idle"
 frame_progress = 0.4540565
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192442230]
-position = Vector2(6, 34)
+position = Vector2(12, 12)
 shape = SubResource("CircleShape2D_ur7pv")
 
 [node name="interactingComponent" parent="." unique_id=24695621 instance=ExtResource("3_qhqgy")]
-position = Vector2(11, -45)
+position = Vector2(13, -39)
 
 [node name="Inv_UI" parent="." unique_id=540233511 instance=ExtResource("5_geh87")]
 anchors_preset = 0
@@ -92,3 +93,9 @@ offset_right = -707.0
 offset_bottom = 215.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="spirit_counter" parent="." unique_id=320775854 instance=ExtResource("6_4mwuw")]
+offset_left = -1042.0
+offset_top = -815.0
+offset_right = -1042.0
+offset_bottom = -815.0
