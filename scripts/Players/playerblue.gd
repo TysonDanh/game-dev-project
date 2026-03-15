@@ -85,10 +85,3 @@ func collect(item: InvItem):
 
 func remove(_index: int):
 	return inv.drop()
-
-
-
-
-func set_spirit(new_spirit_count: int) -> void:
-	spirit_counter = new_spirit_count
-	

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cggpyjkyxt7b1" path="res://scripts/Interacts/spirit_caged.gd" id="1_foju2"]
 [ext_resource type="Texture2D" uid="uid://cgtag8dxsxg2h" path="res://assets/sprites/All_Interactable_Objects.png" id="2_64p08"]
+[ext_resource type="Resource" uid="uid://cgii5lhhk4h30" path="res://Inventory/items/key.tres" id="2_qnfa7"]
 [ext_resource type="Texture2D" uid="uid://wwlkvdt4stwp" path="res://assets/sprites/Door_Cage.png" id="3_qnfa7"]
 [ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="4_xvvxs"]
 
@@ -77,6 +78,7 @@ radius = 114.01754
 
 [node name="spirit_caged" type="Area2D" unique_id=885438660 groups=["spirits"]]
 script = ExtResource("1_foju2")
+key = ExtResource("2_qnfa7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505049229]
 shape = SubResource("CircleShape2D_2b87u")

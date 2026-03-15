@@ -33,5 +33,27 @@ func drop() -> InvItem:
 	
 	print("empty inv")
 	return null
-			
+
+func has_item(item: InvItem) -> bool:
+	for slot in slots:
+		if slot.item == item:
+			return true
+	return false
+	
+func remove_item(item: InvItem) -> bool:
+	for i in range(slots.size()):
+		var slot = slots[i]
+
+		if slot.item == item and slot.amount > 0:
+			var new_slot = slot.duplicate()
+			new_slot.amount -= 1
+
+			if new_slot.amount <= 0:
+				new_slot.item = null
+
+			slots[i] = new_slot
+			update.emit()
+			return true
+
+	return false
 	
