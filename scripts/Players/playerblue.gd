@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var animated_Sprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var walk_speed = 650.0
 @export var run_speed = 600.0
@@ -14,10 +15,6 @@ extends CharacterBody2D
 @export var dash_curve : Curve
 @export var dash_cooldown = 1.0
 
-var is_dashing = false
-var dash_start_position = 0
-var dash_direction = 0
-var dash_timer = 0
 
 # Inventory
 @export var inv: Inv
@@ -43,40 +40,35 @@ func _physics_process(delta: float) -> void:
 	var speed
 	if Input.is_action_pressed("run"):
 		speed = run_speed
+		
 	else:
 		speed = walk_speed
 	
-	
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#WALKING Movement
 	var direction := Input.get_axis("left", "right")
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
-		
-	#DASH Activation
-	if Input.is_action_just_pressed("dash") and direction and not is_dashing and dash_timer <= 0:
-		is_dashing = true
-		dash_start_position = position.x
-		dash_direction = direction
-		dash_timer = dash_cooldown
-		
-	#Performs the actual Dashing 
-	if is_dashing:
-		var current_distance =abs(position.x - dash_start_position)
-		if current_distance >= dash_max_distance:
-			is_dashing = false
+	var last_direction: String = "right"
+
+	if direction != 0:
+		velocity.x = direction * speed
+		if direction < 0:
+			animated_Sprite2D.flip_h = true
+			last_direction = "left"
+			$AnimatedSprite2D.play("Run")
+			
+
 		else:
-			velocity.x = dash_direction * dash_speed + dash_curve.sample(current_distance / dash_max_distance)
-			velocity.y = 0
+			animated_Sprite2D.flip_h = false
+			last_direction = "right"
+			$AnimatedSprite2D.play("Run")
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		$AnimatedSprite2D.play("Idle")
 	
-	#Dash timer
-	if dash_timer > 0:
-		dash_timer -= delta
+	
 		
+	
 		
 	move_and_slide()
 
