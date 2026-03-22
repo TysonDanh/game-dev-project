@@ -10,3 +10,6 @@ var interact: Callable = func():
 	pass
 	
 	
+signal on_break(ani_name)
+	
+	

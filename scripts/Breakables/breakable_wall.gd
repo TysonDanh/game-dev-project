@@ -6,6 +6,9 @@ extends Node2D
 @export var rock_scene: PackedScene
 @export var rock_count :=3
 
+
+
+
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
@@ -13,6 +16,7 @@ func _ready() -> void:
 func _on_interact():
 	$Sprite2D.visible = false
 	$CollisionShape2D.disabled = true
+	$Interactable.emit_signal("on_break", "break_wall")
 	
 	for i in rock_count:
 		var rock = rock_scene.instantiate()
@@ -24,6 +28,7 @@ func _on_interact():
 		if rock is CanvasItem:
 			rock.z_as_relative = false
 			rock.z_index = 50
+			
 		
 		queue_free()
 	

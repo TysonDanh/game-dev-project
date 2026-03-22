@@ -20,7 +20,7 @@ extends CharacterBody2D
 @export var inv: Inv
 
 var spirit_counter = 0
-
+var is_breaking := false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -30,23 +30,18 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_force
+		
 	
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= jump_deceleration
 		
-	
-		
-	#RUNNING Movement
+	#Walking Movement
 	var speed
 	if Input.is_action_pressed("run"):
 		speed = run_speed
-		
 	else:
 		speed = walk_speed
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#WALKING Movement
 	var direction := Input.get_axis("left", "right")
 	var last_direction: String = "right"
 
@@ -55,22 +50,40 @@ func _physics_process(delta: float) -> void:
 		if direction < 0:
 			animated_Sprite2D.flip_h = true
 			last_direction = "left"
-			$AnimatedSprite2D.play("Run")
-			
-
 		else:
 			animated_Sprite2D.flip_h = false
 			last_direction = "right"
-			$AnimatedSprite2D.play("Run")
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		$AnimatedSprite2D.play("Idle")
-	
-	
 		
 	
 		
 	move_and_slide()
+	
+	
+	if is_breaking:
+		return
+	
+	if not is_on_floor():
+		if velocity.y < 0:
+			if $AnimatedSprite2D.animation != "jump_up":
+				$AnimatedSprite2D.play("jump_up")
+		else:
+			if $AnimatedSprite2D.animation != "jump_down":
+				$AnimatedSprite2D.play("jump_down")
+			
+	elif direction != 0:
+		$AnimatedSprite2D.play("Run")
+	else:
+		$AnimatedSprite2D.play("Idle")
+		
+
+
+	
+
+	
+
 
 func collect(item: InvItem):
 	return inv.insert(item)

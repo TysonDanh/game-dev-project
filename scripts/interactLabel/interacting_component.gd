@@ -6,9 +6,6 @@ var current_interactions:= []
 var can_interact := true
 
 
-
-
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
 		if current_interactions:
@@ -38,8 +35,20 @@ func _sort_by_nearest(area1, area2):
 	
 
 func _on_interact_range_area_entered(area: Area2D) -> void:
+	if area in current_interactions:
+		return
 	current_interactions.push_back(area)
+	if area.has_signal("on_break"):
+		area.on_break.connect(_on_break_animation)
 
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	current_interactions.erase(area)
+	if area.has_signal("on_break") and area.on_break.is_connected(_on_break_animation):
+		area.on_break.disconnect(_on_break_animation)
+	
+func _on_break_animation(anim_name: String):
+	get_parent().is_breaking = true
+	get_parent().get_node("AnimatedSprite2D").play(anim_name)
+	await get_parent().get_node("AnimatedSprite2D").animation_finished
+	get_parent().is_breaking = false
