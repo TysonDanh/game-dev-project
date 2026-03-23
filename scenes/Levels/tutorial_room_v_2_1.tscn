@@ -676,9 +676,6 @@ polygon = PackedVector2Array(2734, 747, 2914, 746, 2914, 803, 2735, 801)
 position = Vector2(512, -129)
 polygon = PackedVector2Array(4216, 1072, 4396, 1071, 4396, 1128, 4217, 1126)
 
-[node name="Player Red" parent="Foreground/StaticBody2D" unique_id=360523801 instance=ExtResource("12_2bece")]
-position = Vector2(-84, 1012)
-
 [node name="Characters" type="Node2D" parent="." unique_id=58432218]
 
 [node name="NPC" parent="Characters" unique_id=1787037599 instance=ExtResource("14_2bece")]
@@ -689,11 +686,16 @@ lines = Array[String](["Hello, testing dialog"])
 position = Vector2(3822, 414)
 lines = Array[String](["Same test, other NPC here"])
 
-[node name="Player" parent="Characters" unique_id=1426815937 instance=ExtResource("5_wq2qt")]
-position = Vector2(-321, 1057)
+[node name="Players" type="Node2D" parent="." unique_id=414072525]
+position = Vector2(-84, 1012)
 
-[node name="Camera2D" type="Camera2D" parent="Characters/Player" unique_id=78727600]
+[node name="Player" parent="Players" unique_id=1426815937 instance=ExtResource("5_wq2qt")]
+position = Vector2(-237, 45)
+
+[node name="Camera2D" type="Camera2D" parent="Players/Player" unique_id=78727600]
 position = Vector2(22, -279)
+
+[node name="Player Red" parent="Players" unique_id=360523801 instance=ExtResource("12_2bece")]
 
 [node name="ghostfloor" parent="." unique_id=589440018 instance=ExtResource("14_w5s5l")]
 position = Vector2(1434, 642)

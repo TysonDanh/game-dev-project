@@ -1,27 +1,26 @@
 extends CharacterBody2D
 
+@onready var animated_Sprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var walk_speed = 250.0
-@export var run_speed = 400.0
-@export_range(0, 1) var acceleration = 0.1
-@export_range(0, 1) var deceleration = 0.1
+@export var walk_speed = 650.0
+@export var run_speed = 600.0
+@export_range(0, 1) var acceleration = 0.15
+@export_range(0, 1) var deceleration = 0.15
 
 @export var jump_force = -700.0
-@export_range (0, 1) var jump_deceleration = 0.5
+@export_range (0, 1) var jump_deceleration = 0.3
 
 @export var dash_speed = 1000.0
 @export var dash_max_distance = 300.0
 @export var dash_curve : Curve
 @export var dash_cooldown = 1.0
 
-var is_dashing = false
-var dash_start_position = 0
-var dash_direction = 0
-var dash_timer = 0
 
 # Inventory
-#@export var inv: Inv
+@export var inv: Inv
 
+var spirit_counter = 0
+var is_breaking := false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,51 +30,63 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump_red") and is_on_floor():
 		velocity.y = jump_force
+		
 	
 	if Input.is_action_just_released("jump_red") and velocity.y < 0:
 		velocity.y *= jump_deceleration
-	
-	#RUNNING Movement
+		
+	#Walking Movement
 	var speed
 	if Input.is_action_pressed("run_red"):
 		speed = run_speed
 	else:
 		speed = walk_speed
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#WALKING Movement
 	var direction := Input.get_axis("left_red", "right_red")
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
-	
-	#DASH Activation
-	if Input.is_action_just_pressed("dash_red") and direction and not is_dashing and dash_timer <= 0:
-		is_dashing = true
-		dash_start_position = position.x
-		dash_direction = direction
-		dash_timer = dash_cooldown
-		
-	#Performs the actual Dashing 
-	if is_dashing:
-		var current_distance =abs(position.x - dash_start_position)
-		if current_distance >= dash_max_distance:
-			is_dashing = false
+	var last_direction: String = "right"
+
+	if direction != 0:
+		velocity.x = direction * speed
+		if direction < 0:
+			animated_Sprite2D.flip_h = true
+			last_direction = "left"
 		else:
-			velocity.x = dash_direction * dash_speed + dash_curve.sample(current_distance / dash_max_distance)
-			velocity.y = 0
+			animated_Sprite2D.flip_h = false
+			last_direction = "right"
+			
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		
 	
-	#Dash timer
-	if dash_timer > 0:
-		dash_timer -= delta
-	
+		
 	move_and_slide()
 	
-#func collect(item: InvItem):
-#	return inv.insert(item)
-
-#func remove(_index: int):
-#	return inv.drop()
 	
+	if is_breaking:
+		return
+	
+	if not is_on_floor():
+		if velocity.y < 0:
+			if $AnimatedSprite2D.animation != "jump_up":
+				$AnimatedSprite2D.play("jump_up")
+		else:
+			if $AnimatedSprite2D.animation != "jump_down":
+				$AnimatedSprite2D.play("jump_down")
+			
+	elif direction != 0:
+		$AnimatedSprite2D.play("Run")
+	else:
+		$AnimatedSprite2D.play("Idle")
+		
+
+
+	
+
+	
+
+
+func collect(item: InvItem):
+	return inv.insert(item)
+
+func remove(_index: int):
+	return inv.drop()

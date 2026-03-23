@@ -28,21 +28,21 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump_blue") and is_on_floor():
 		velocity.y = jump_force
 		
 	
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+	if Input.is_action_just_released("jump_blue") and velocity.y < 0:
 		velocity.y *= jump_deceleration
 		
 	#Walking Movement
 	var speed
-	if Input.is_action_pressed("run"):
+	if Input.is_action_pressed("run_blue"):
 		speed = run_speed
 	else:
 		speed = walk_speed
 	
-	var direction := Input.get_axis("left", "right")
+	var direction := Input.get_axis("left_blue", "right_blue")
 	var last_direction: String = "right"
 
 	if direction != 0:
