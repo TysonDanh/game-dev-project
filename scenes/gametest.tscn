@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="8_82nuq"]
 [ext_resource type="PackedScene" uid="uid://cdk827s6pi6th" path="res://scenes/BuildController.tscn" id="9_xe5qx"]
 [ext_resource type="PackedScene" uid="uid://coflpnc87r6im" path="res://scenes/Interacts/key.tscn" id="10_18hib"]
-[ext_resource type="PackedScene" uid="uid://c647ldmlons6w" path="res://scenes/player_red.tscn" id="11_1uq2d"]
+[ext_resource type="PackedScene" uid="uid://ds68s3dfih6qm" path="res://scenes/player_red.tscn" id="11_1uq2d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82nuq"]
 normal = Vector2(-0.008849211, -0.99996084)

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dp4em41r46ara"]
+
+[ext_resource type="PackedScene" uid="uid://dqryqt5bndl7i" path="res://scenes/playerblue.tscn" id="1_efq7q"]
+[ext_resource type="Script" uid="uid://7ry7q6x0m65f" path="res://scenes/camera_2d.gd" id="1_fun68"]
+[ext_resource type="PackedScene" uid="uid://ds68s3dfih6qm" path="res://scenes/player_red.tscn" id="2_fun68"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_efq7q"]
+
+[node name="Node2D" type="Node2D" unique_id=1461207505]
+
+[node name="Player Blue" parent="." unique_id=1426815937 instance=ExtResource("1_efq7q")]
+position = Vector2(-79, -172)
+
+[node name="Player Red" parent="." unique_id=360523801 instance=ExtResource("2_fun68")]
+position = Vector2(222, -150)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=471795758 node_paths=PackedStringArray("Player_Red", "Player_Blue")]
+position_smoothing_enabled = true
+script = ExtResource("1_fun68")
+Player_Red = NodePath("../Player Red")
+Player_Blue = NodePath("../Player Blue")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1550446279]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2146051000]
+shape = SubResource("WorldBoundaryShape2D_efq7q")
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=937993166]
+enabled = false

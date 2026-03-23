@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.play("jump_down")
 			
 	elif direction != 0:
-		$AnimatedSprite2D.play("Run")
+		$AnimatedSprite2D.play("run")
 	else:
 		$AnimatedSprite2D.play("Idle")
 		
