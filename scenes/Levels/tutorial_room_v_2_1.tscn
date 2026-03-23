@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="8_q0b7a"]
 [ext_resource type="PackedScene" uid="uid://bx6ck7eau0n1l" path="res://scenes/Interacts/lever.tscn" id="9_w5s5l"]
 [ext_resource type="PackedScene" uid="uid://exs17xv7viwv" path="res://scenes/Interacts/spirit_caged.tscn" id="10_2bece"]
+[ext_resource type="PackedScene" uid="uid://ds68s3dfih6qm" path="res://scenes/player_red.tscn" id="12_2bece"]
 [ext_resource type="PackedScene" uid="uid://dt1q7q2x0fgk3" path="res://scenes/npc.tscn" id="14_2bece"]
 [ext_resource type="PackedScene" uid="uid://cfl18xespjbfb" path="res://scenes/ghostfloor.tscn" id="14_w5s5l"]
 
@@ -674,6 +675,9 @@ polygon = PackedVector2Array(2734, 747, 2914, 746, 2914, 803, 2735, 801)
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Foreground/StaticBody2D" unique_id=1939842253]
 position = Vector2(512, -129)
 polygon = PackedVector2Array(4216, 1072, 4396, 1071, 4396, 1128, 4217, 1126)
+
+[node name="Player Red" parent="Foreground/StaticBody2D" unique_id=360523801 instance=ExtResource("12_2bece")]
+position = Vector2(-84, 1012)
 
 [node name="Characters" type="Node2D" parent="." unique_id=58432218]
 
