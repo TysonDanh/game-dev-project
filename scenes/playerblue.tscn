@@ -238,7 +238,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur7pv"]
 radius = 73.24616
 
-[node name="Player" type="CharacterBody2D" unique_id=1426815937 groups=["players"]]
+[node name="Player Blue" type="CharacterBody2D" unique_id=1426815937 groups=["players"]]
 script = ExtResource("1_g2els")
 dash_curve = SubResource("Curve_qhqgy")
 inv = ExtResource("2_x1ier")
