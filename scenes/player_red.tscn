@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://c647ldmlons6w"]
 
 [ext_resource type="Script" uid="uid://diu347tjrb0y5" path="res://scenes/player_red.gd" id="1_0ej1a"]
+=======
+[gd_scene format=3 uid="uid://dwm81tg6sjtfb"]
+
+[ext_resource type="Script" path="res://scenes/player_red.gd" id="1_0ej1a"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://bkoyna4bhkgh0" path="res://assets/sprites/Red_Idle.png" id="1_ycmj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ej1a"]
