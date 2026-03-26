@@ -4,7 +4,7 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var rock_scene: PackedScene
-@export var rock_count :=3
+@export var rock_count :=2
 
 
 

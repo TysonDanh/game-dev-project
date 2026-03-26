@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://b5wdu7rosaswu"]
+[gd_scene format=3 uid="uid://ctei1sg2g8lh"]
 
-[ext_resource type="Script" uid="uid://bdn4rhov112x8" path="res://scripts/Textbox/textbox.gd" id="1_m6e41"]
-[ext_resource type="Texture2D" uid="uid://dkyfn1rmme3ee" path="res://assets/Tutorial_HUD_V01/Tutorial_HUD_V01/Dialogue_NPC.png" id="2_qdi28"]
-[ext_resource type="FontFile" uid="uid://dg7pcepu3xmyy" path="res://assets/fonts/Vincendo_Font_0_99/OpenType (.otf)/Vincendo-Regular.otf" id="3_qdi28"]
+[ext_resource type="Script" uid="uid://csdtnki30q0uc" path="res://scripts/player_textbox.gd" id="1_r21l3"]
+[ext_resource type="Texture2D" uid="uid://dmgw71wha8b1x" path="res://assets/Tutorial_HUD_V01/Tutorial_HUD_V01/Dialogue_Blue.png" id="2_rkjvu"]
+[ext_resource type="FontFile" uid="uid://dg7pcepu3xmyy" path="res://assets/fonts/Vincendo_Font_0_99/OpenType (.otf)/Vincendo-Regular.otf" id="3_ve1rr"]
 
-[node name="Textbox" type="MarginContainer" unique_id=145917342]
+[node name="Textbox Blue" type="MarginContainer" unique_id=145917342]
 offset_right = 339.0
 offset_bottom = 128.0
-script = ExtResource("1_m6e41")
+script = ExtResource("1_r21l3")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=921714149]
 layout_mode = 2
-texture = ExtResource("2_qdi28")
+texture = ExtResource("2_rkjvu")
 region_rect = Rect2(0, 0, 320, 192)
 patch_margin_left = 64
 patch_margin_top = 64
@@ -28,7 +28,7 @@ theme_override_constants/margin_bottom = 64
 [node name="Label" type="Label" parent="MarginContainer" unique_id=994032163]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.19215687, 0.27058825, 0.41568628, 1)
-theme_override_fonts/font = ExtResource("3_qdi28")
+theme_override_fonts/font = ExtResource("3_ve1rr")
 theme_override_font_sizes/font_size = 32
 vertical_alignment = 1
 

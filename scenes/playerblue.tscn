@@ -262,15 +262,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -1062.0
-offset_top = 85.0
-offset_right = -707.0
-offset_bottom = 215.0
+offset_left = -1166.0
+offset_top = 358.0
+offset_right = -811.0
+offset_bottom = 488.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="spirit_counter" parent="." unique_id=320775854 instance=ExtResource("6_4mwuw")]
-offset_left = -1042.0
-offset_top = -815.0
-offset_right = -1042.0
-offset_bottom = -815.0
+offset_left = -1155.0
+offset_top = -472.0
+offset_right = -1155.0
+offset_bottom = -472.0
