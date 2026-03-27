@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bvr3bjdbc5qeu" path="res://UI/spirit_counter.tscn" id="6_4mwuw"]
 [ext_resource type="Texture2D" uid="uid://bl0o8i3g1afmq" path="res://assets/sprites/Blue_Ability_1.png" id="6_61krm"]
 
-[sub_resource type="Curve" id="Curve_qhqgy"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
 region = Rect2(0, 0, 148, 182)
@@ -37,37 +35,37 @@ region = Rect2(592, 0, 148, 182)
 atlas = ExtResource("2_g2els")
 region = Rect2(740, 0, 148, 182)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwbfx"]
-atlas = ExtResource("4_jxa6u")
-region = Rect2(6, 8, 160, 182)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1jie"]
-atlas = ExtResource("4_jxa6u")
-region = Rect2(166, 8, 160, 182)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_61krm"]
 atlas = ExtResource("4_jxa6u")
-region = Rect2(326, 8, 160, 182)
+region = Rect2(0, 0, 161, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgi76"]
 atlas = ExtResource("4_jxa6u")
-region = Rect2(486, 8, 160, 182)
+region = Rect2(161, 0, 161, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mcxb"]
 atlas = ExtResource("4_jxa6u")
-region = Rect2(646, 8, 160, 182)
+region = Rect2(322, 0, 161, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45tlt"]
 atlas = ExtResource("4_jxa6u")
-region = Rect2(806, 8, 160, 182)
+region = Rect2(483, 0, 161, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axccu"]
 atlas = ExtResource("4_jxa6u")
-region = Rect2(966, 8, 160, 182)
+region = Rect2(644, 0, 161, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bo4in"]
 atlas = ExtResource("4_jxa6u")
-region = Rect2(1126, 8, 160, 182)
+region = Rect2(805, 0, 161, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6w2f"]
+atlas = ExtResource("4_jxa6u")
+region = Rect2(966, 0, 161, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avp8a"]
+atlas = ExtResource("4_jxa6u")
+region = Rect2(1127, 0, 161, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md2sh"]
 atlas = ExtResource("5_u1jie")
@@ -148,12 +146,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bwbfx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u1jie")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_61krm")
 }, {
 "duration": 1.0,
@@ -170,6 +162,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bo4in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6w2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avp8a")
 }],
 "loop": true,
 "name": &"Run",
@@ -240,21 +238,20 @@ radius = 73.24616
 
 [node name="Player Blue" type="CharacterBody2D" unique_id=1426815937 groups=["players"]]
 script = ExtResource("1_g2els")
-dash_curve = SubResource("Curve_qhqgy")
 inv = ExtResource("2_x1ier")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880643034]
-position = Vector2(0, -12)
+position = Vector2(74, -91)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
 animation = &"Run"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192442230]
-position = Vector2(12, 12)
+position = Vector2(72, -73)
 shape = SubResource("CircleShape2D_ur7pv")
 
 [node name="interactingComponent" parent="." unique_id=24695621 instance=ExtResource("3_qhqgy")]
-position = Vector2(13, -39)
+position = Vector2(73, -115)
 
 [node name="Inv_UI" parent="." unique_id=540233511 instance=ExtResource("5_geh87")]
 anchors_preset = 0

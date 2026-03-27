@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyfitwst3bwfr" path="res://interaction_components/interactable.tscn" id="2_fkq7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsr7n"]
-size = Vector2(259.5, 70)
+size = Vector2(260.75, 62)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5xqbb"]
 radius = 140.05713
@@ -16,11 +16,11 @@ script = ExtResource("1_3ox53")
 rock_scene = ExtResource("2_6ykop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=944488570]
-position = Vector2(2.25, 2)
+position = Vector2(131.375, -32)
 shape = SubResource("RectangleShape2D_tsr7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=111152982]
-position = Vector2(5, 1)
+position = Vector2(131, -32)
 texture = ExtResource("1_qbmoi")
 region_enabled = true
 region_rect = Rect2(0, 165.5, 266, 64.5)
@@ -29,5 +29,5 @@ region_rect = Rect2(0, 165.5, 266, 64.5)
 interact_name = "[E] Break Floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=472191530]
-position = Vector2(2, -20)
+position = Vector2(131, -32)
 shape = SubResource("CircleShape2D_5xqbb")
