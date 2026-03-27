@@ -12,6 +12,8 @@ extends Node2D
 @onready var placed_root: Node2D = get_node(placed_path)
 @onready var ghost_holder: Node2D = $Ghost
 
+
+
 # Types of building.
 enum BuildType { WALL, FLOOR }
 
@@ -29,21 +31,27 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	_update_ghost()
 
+# Here I have to Connect this script to player_red to trigger the building variable and set to true.
+#
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
+		# Select Wall
 		if event.keycode == KEY_1 or event.keycode == KEY_KP_1:
 			_select_build(BuildType.WALL)
+		# Select Floor
 		if event.keycode == KEY_2 or event.keycode == KEY_KP_2:
 			_select_build(BuildType.FLOOR)
+		# Rotate with R
 		if event.keycode == KEY_R:
 			rotate_steps = (rotate_steps + 1) % 4
-
+	# Place and rotate with Mouse 1 & Mouse 2
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			_try_place()
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			rotate_steps = (rotate_steps + 1) % 4
-
+# Here this needs to set building in player_red to false
 func _select_build(t: BuildType) -> void:
 	# If pressing the same build type again, toggle OFF
 	if build_active and selected_build == t:
@@ -95,7 +103,7 @@ func _update_ghost() -> void:
 	# Tint red if you can't afford
 	var can_afford := (inv != null and rock_item != null and _count_rocks() >= _get_selected_cost())
 	_force_modulate(ghost, Color(1, 1, 1, 0.35) if can_afford else Color(1, 0.4, 0.4, 0.35))
-
+# Here we have to set building to false after placing a floor in player_red
 func _try_place() -> void:
 	if inv == null or rock_item == null or ghost == null:
 		return

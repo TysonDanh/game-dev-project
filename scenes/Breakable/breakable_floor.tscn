@@ -16,16 +16,17 @@ script = ExtResource("1_3ox53")
 rock_scene = ExtResource("2_6ykop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=944488570]
-position = Vector2(131.375, -32)
+position = Vector2(0.375, 1)
 shape = SubResource("RectangleShape2D_tsr7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=111152982]
-position = Vector2(131, -32)
+position = Vector2(0, 1)
 texture = ExtResource("1_qbmoi")
 region_enabled = true
 region_rect = Rect2(0, 165.5, 266, 64.5)
 
 [node name="Interactable" parent="." unique_id=289338002 instance=ExtResource("2_fkq7d")]
+position = Vector2(-131, 33)
 interact_name = "[E] Break Floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=472191530]

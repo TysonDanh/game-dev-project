@@ -23,6 +23,8 @@ var spirit_counter = 0
 
 var is_breaking := false
 
+var building = false
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -33,51 +35,54 @@ func _physics_process(delta: float) -> void:
 	# Play Charge, and Wind up Animation. Stop when Ability is used or action canceled
 		#Dunno how the user will action cancel.
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump_red") and is_on_floor():
-		velocity.y = jump_force
-	
-	if Input.is_action_just_released("jump_red") and velocity.y < 0:
-		velocity.y *= jump_deceleration
-	
-	
-	#Walking Movement
-	var speed = walk_speed
-	var direction := Input.get_axis("left_red", "right_red")
-	var last_direction: String = "right"
-	
-	if direction != 0:
-		velocity.x = direction * speed
-		if direction < 0:
-			animated_Sprite2D.flip_h = true
-			last_direction = "left"
-		else:
-			animated_Sprite2D.flip_h = false
-			last_direction = "right"
-	
+	if building:
+		$AnimatedSprite2D.play("Charge")
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-	
-	
-	move_and_slide()
-	
-	
-	if is_breaking:
-		return
-	
-	# Animations
-	if not is_on_floor():
-		if velocity.y < 0:
-			if $AnimatedSprite2D.animation != "jump_up":
-				$AnimatedSprite2D.play("jump_up")
+		# Handle jump.
+		if Input.is_action_just_pressed("jump_red") and is_on_floor():
+			velocity.y = jump_force
+		
+		if Input.is_action_just_released("jump_red") and velocity.y < 0:
+			velocity.y *= jump_deceleration
+		
+		
+		#Walking Movement
+		var speed = walk_speed
+		var direction := Input.get_axis("left_red", "right_red")
+		var last_direction: String = "right"
+		
+		if direction != 0:
+			velocity.x = direction * speed
+			if direction < 0:
+				animated_Sprite2D.flip_h = true
+				last_direction = "left"
+			else:
+				animated_Sprite2D.flip_h = false
+				last_direction = "right"
+		
 		else:
-			if $AnimatedSprite2D.animation != "jump_down":
-				$AnimatedSprite2D.play("jump_down")
-	
-	elif direction != 0:
-		$AnimatedSprite2D.play("run")
-	else:
-		$AnimatedSprite2D.play("Idle")
+			velocity.x = move_toward(velocity.x, 0, speed)
+		
+		
+		move_and_slide()
+		
+		
+		if is_breaking:
+			return
+		
+		# Animations
+		if not is_on_floor():
+			if velocity.y < 0:
+				if $AnimatedSprite2D.animation != "jump_up":
+					$AnimatedSprite2D.play("jump_up")
+			else:
+				if $AnimatedSprite2D.animation != "jump_down":
+					$AnimatedSprite2D.play("jump_down")
+		
+		elif direction != 0:
+			$AnimatedSprite2D.play("run")
+		else:
+			$AnimatedSprite2D.play("Idle")
 
 #Inventory Stuff
 func collect(item: InvItem):
