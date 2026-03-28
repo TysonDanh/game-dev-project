@@ -21,10 +21,10 @@ shape = SubResource("CircleShape2D_lqmmv")
 
 [node name="interactLabel" type="Label" parent="." unique_id=533339659]
 z_index = 10
-offset_left = -137.0
-offset_top = -246.0
+offset_left = -138.0
+offset_top = -183.0
 offset_right = 139.0
-offset_bottom = -113.0
+offset_bottom = -50.0
 size_flags_horizontal = 4
 text = "E to Interact
 "
