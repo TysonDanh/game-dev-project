@@ -25,8 +25,8 @@ func _ready():
 func _process(_delta):
 	if is_instance_valid(follow_target):
 		var target_pos = follow_target.global_position + Vector2(0, -target_height / 2.0)
-		target_pos.x -= size.x / 2.0
-		target_pos.y -= size.y + 8.0
+		target_pos.x -= size.x / 4.5
+		target_pos.y -= size.y + 125.0
 		global_position = lerp(global_position, target_pos, 0.2)
 
 func setup(target: Node2D, height: float):

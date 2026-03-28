@@ -18,7 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://coflpnc87r6im" path="res://scenes/Interacts/key.tscn" id="12_t1nif"]
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="13_rp40o"]
 [ext_resource type="PackedScene" uid="uid://cfl18xespjbfb" path="res://scenes/ghostfloor.tscn" id="17_ici4c"]
+[ext_resource type="PackedScene" uid="uid://bcrjaniidpk6e" path="res://UI/inv_ui.tscn" id="18_e51o7"]
 [ext_resource type="PackedScene" uid="uid://dt1q7q2x0fgk3" path="res://scenes/npc.tscn" id="18_f67fi"]
+[ext_resource type="PackedScene" uid="uid://bvr3bjdbc5qeu" path="res://UI/spirit_counter.tscn" id="19_2rfcu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gr6xr"]
 atlas = ExtResource("6_w3iaj")
@@ -1230,19 +1232,28 @@ position = Vector2(-2350, 960)
 position = Vector2(9325, -252)
 
 [node name="Player Red" parent="Players" unique_id=360523801 instance=ExtResource("5_6xec0")]
-position = Vector2(-5285, 536)
+position = Vector2(-15943, 576)
 
 [node name="Player Blue" parent="Players" unique_id=1426815937 instance=ExtResource("6_whhtf")]
-position = Vector2(-5656, 536)
+position = Vector2(-15620, 573)
 
 [node name="Camera2D" type="Camera2D" parent="Players" unique_id=1356800401 node_paths=PackedStringArray("Player_Red", "Player_Blue")]
-position = Vector2(-5135, 755)
+position = Vector2(-15677, 462)
 script = ExtResource("7_khnwu")
 Player_Red = NodePath("../Player Red")
 Player_Blue = NodePath("../Player Blue")
 
-[node name="Camera2D2" type="Camera2D" parent="Players" unique_id=50658933]
-position = Vector2(-5135, 755)
+[node name="Inv_UI" parent="Players/Camera2D" unique_id=540233511 instance=ExtResource("18_e51o7")]
+offset_left = -999.0
+offset_top = 353.0
+offset_right = -654.0
+offset_bottom = 482.0
+
+[node name="spirit_counter" parent="Players/Camera2D" unique_id=320775854 instance=ExtResource("19_2rfcu")]
+offset_left = -1033.0
+offset_top = -505.0
+offset_right = -1033.0
+offset_bottom = -505.0
 
 [node name="Ghost Floors" type="Node2D" parent="." unique_id=1733100262]
 
