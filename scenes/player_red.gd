@@ -22,7 +22,7 @@ var spirit_counter = 0
 
 var is_breaking := false
 
-var building = false
+var building := false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
