@@ -39,8 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Select Wall
 		if event.keycode == KEY_1 or event.keycode == KEY_KP_1:
 			_select_build(BuildType.WALL)
-		# Select Floor
-		if event.keycode == KEY_2 or event.keycode == KEY_KP_2:
+		# Select Floor (remove apostrophe later)
+		if event.keycode == KEY_2 or event.keycode == KEY_KP_2 or event.keycode == KEY_APOSTROPHE:
 			_select_build(BuildType.FLOOR)
 		# Rotate with R
 		if event.keycode == KEY_R:

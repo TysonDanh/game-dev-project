@@ -17,7 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dt1q7q2x0fgk3" path="res://scenes/npc.tscn" id="13_ypwdg"]
 [ext_resource type="PackedScene" uid="uid://bx6ck7eau0n1l" path="res://scenes/Interacts/lever.tscn" id="14_7be6h"]
 [ext_resource type="PackedScene" uid="uid://coflpnc87r6im" path="res://scenes/Interacts/key.tscn" id="15_fjeb0"]
+[ext_resource type="PackedScene" uid="uid://bvr3bjdbc5qeu" path="res://UI/spirit_counter.tscn" id="17_fjeb0"]
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="18_1vbh8"]
+[ext_resource type="PackedScene" uid="uid://bcrjaniidpk6e" path="res://UI/inv_ui.tscn" id="18_tgksj"]
+[ext_resource type="AudioStream" uid="uid://dkl2akwpldusk" path="res://assets/sounds/Mind Palace.wav" id="21_1vbh8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8t67i"]
 texture = ExtResource("4_7vuk6")
@@ -597,7 +600,6 @@ tile_set = SubResource("TileSet_7g33h")
 [node name="StaticBody2D" type="StaticBody2D" parent="Foreground" unique_id=254422597]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Foreground/StaticBody2D" unique_id=721005003]
-visible = false
 polygon = PackedVector2Array(-1831, -528, -1650, -524, -1650, -76, -1486, -80, -1483, -528, -1329, -526, -1331, 109, -1223, 113, -1227, 47, -1169, 45, -1159, -276, -1019, -273, -1007, -11, -908, -15, -910, -337, -717, -335, -715, -467, -559, -465, -563, -175, -627, -179, -627, 178, -461, 174, -461, -78, -397, -78, -397, -530, -179, -528, -181, -271, -47, -270, -50, -210, 176, -204, 179, -401, 495, -401, 495, -401, 498, -533, 2059, -524, 2065, -333, 2511, -336, 2513, -204, 2579, -207, 2573, -76, 2770, -79, 2770, 115, 3409, 115, 3409, 560, 3509, 557, 3509, 112, 3757, 112, 3763, -273, 3914, -270, 3923, -22, 4080, -13, 4088, -273, 4217, -276, 4208, -401, 4659, -399, 4659, -530, 4745, -533, 4750, -336, 4813, -336, 4816, -76, 4916, -82, 4918, -339, 5361, -339, 5369, -533, 6285, -527, 6288, -45, 5392, -50, 5392, 463, 4493, 460, 4496, 657, 4174, 657, 4177, 845, 4050, 848, 4044, 971, 3057, 976, 3060, 782, 2035, 779, 2035, 394, 1810, 397, 1807, 460, 1587, 457, 1589, 200, 1295, 206, 1295, 337, 1079, 331, 1070, 74, 585, 74, 588, 976, -391, 973, -402, 779, -1013, 782, -1007, 853, -1141, 848, -1141, 905, -1418, 907, -1425, 523, -1707, 525, -1717, 845, -1868, 845, -1871, 779, -2039, 788, -2033, 976, -2158, 983, -2158, 1073, -1839, 1075, -1842, 1297, -2188, 1297, -2193, 1231, -2385, 1227, -2382, 1044, -2448, 1037, -2450, 912, -2701, 910, -2701, 845, -5135, 848, -5966, 852, -5966, 111, -5835, 111, -5837, -340, -5522, -335, -5514, -532, -5297, -528, -5299, -12, -5194, -16, -5196, -532, -4911, -532, -4911, -204, -4727, -207, -4723, 53, -4596, 53, -4590, 439, -4433, 432, -4428, -211, -3890, -209, -3888, 78, -3957, 78, -3953, 629, -3597, 623, -3595, 428, -2898, 432, -2889, 299, -2444, 304, -2441, 237, -2191, 237, -2188, 76, -3466, 74, -3470, -211, -3149, -211, -3147, -404, -2765, -402, -2763, -530, -1854, -526, -1713, -1484, -7804, -1420, -6837, 2641, 7789, 2339, 7900, -1817, -1647, -1485)
 
 [node name="Interactables" type="Node2D" parent="." unique_id=67766799]
@@ -629,6 +631,7 @@ position = Vector2(-2002, 1223)
 
 [node name="Door" parent="Interactables" unique_id=895583818 instance=ExtResource("18_1vbh8")]
 position = Vector2(6110, -182)
+next_level = "res://scenes/Levels/1_1_level.tscn"
 
 [node name="Players" type="Node2D" parent="." unique_id=399543589]
 
@@ -644,8 +647,17 @@ script = ExtResource("7_0fuu0")
 Player_Red = NodePath("../Player Red")
 Player_Blue = NodePath("../Player Blue")
 
-[node name="Camera2D2" type="Camera2D" parent="Players" unique_id=995358429]
-position = Vector2(-5135, 755)
+[node name="spirit_counter" parent="Players/Camera2D" unique_id=320775854 instance=ExtResource("17_fjeb0")]
+offset_left = -1063.0
+offset_top = -527.0
+offset_right = -1063.0
+offset_bottom = -527.0
+
+[node name="Inv_UI" parent="Players/Camera2D" unique_id=540233511 instance=ExtResource("18_tgksj")]
+offset_left = -1057.0
+offset_top = 363.0
+offset_right = -712.0
+offset_bottom = 492.0
 
 [node name="Ghost Floors" type="Node2D" parent="." unique_id=1152450060]
 
@@ -662,6 +674,7 @@ position = Vector2(260, 352)
 position = Vector2(-203, 574)
 
 [node name="NPC" type="Node2D" parent="." unique_id=593024611]
+position = Vector2(4, 0)
 
 [node name="NPC2" parent="NPC" unique_id=1308221139 instance=ExtResource("13_ypwdg")]
 position = Vector2(-4324, 748)
@@ -673,3 +686,6 @@ lines = Array[String](["Oh, Thank you! Thank you! That was admirable!", "Your in
 
 [node name="CheckpointMarker" type="Node2D" parent="." unique_id=1944387228]
 position = Vector2(-2798, 762)
+
+[node name="AudioStreamPlayer - BGMusic" type="AudioStreamPlayer" parent="." unique_id=1338227308]
+stream = ExtResource("21_1vbh8")
