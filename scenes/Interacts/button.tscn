@@ -37,7 +37,7 @@ animations = [{
 radius = 33.06055
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0y28y"]
-radius = 70.00714
+radius = 50.08992
 
 [node name="button" type="Area2D" unique_id=1729993400]
 script = ExtResource("1_en03v")
@@ -50,7 +50,7 @@ animation = &"Pressed"
 shape = SubResource("CircleShape2D_41rcl")
 
 [node name="Interactable" parent="." unique_id=1175822504 instance=ExtResource("2_en03v")]
-interact_name = "[E] Press Button"
+interact_name = "Press Button"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=579118182]
 shape = SubResource("CircleShape2D_0y28y")

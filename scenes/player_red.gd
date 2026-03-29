@@ -15,7 +15,6 @@ extends CharacterBody2D
 #@export var dash_curve : Curve
 #@export var dash_cooldown = 1.0
 
-
 # Inventory
 @export var inv: Inv
 
@@ -23,28 +22,30 @@ var spirit_counter = 0
 
 var is_breaking := false
 
-var building = false
+var building := false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
+	move_and_slide()
+	
 	# When using ability restricts movement
 	# Disable Movement (Walking & Jumping)
 	# Play Charge, and Wind up Animation. Stop when Ability is used or action canceled
 		#Dunno how the user will action cancel.
-
 	if building:
 		$AnimatedSprite2D.play("Charge")
+		velocity.x = move_toward(velocity.x, 0, walk_speed)
 	else:
+		
 		# Handle jump.
 		if Input.is_action_just_pressed("jump_red") and is_on_floor():
 			velocity.y = jump_force
 		
 		if Input.is_action_just_released("jump_red") and velocity.y < 0:
 			velocity.y *= jump_deceleration
-		
 		
 		#Walking Movement
 		var speed = walk_speed
@@ -59,13 +60,8 @@ func _physics_process(delta: float) -> void:
 			else:
 				animated_Sprite2D.flip_h = false
 				last_direction = "right"
-		
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
-		
-		
-		move_and_slide()
-		
 		
 		if is_breaking:
 			return
@@ -78,7 +74,6 @@ func _physics_process(delta: float) -> void:
 			else:
 				if $AnimatedSprite2D.animation != "jump_down":
 					$AnimatedSprite2D.play("jump_down")
-		
 		elif direction != 0:
 			$AnimatedSprite2D.play("run")
 		else:
@@ -90,3 +85,11 @@ func collect(item: InvItem):
 
 func remove(_index: int):
 	return inv.drop()
+
+func _ready():
+	pass
+	
+
+func _on_build_controller_building_toggle(is_on: bool) -> void:
+	if building != is_on:
+		building = is_on

@@ -98,7 +98,7 @@ frame_progress = 1.0
 
 [node name="Interactable" parent="." unique_id=1852995265 instance=ExtResource("4_xvvxs")]
 position = Vector2(4, 7)
-interact_name = "[E] Free Spirit"
+interact_name = "Free Spirit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=387540180]
 position = Vector2(-2, -8)

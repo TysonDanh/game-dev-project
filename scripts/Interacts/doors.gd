@@ -4,7 +4,7 @@ extends Area2D
 @onready var animated_Sprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
 # Just change the Next Level string in the Inspector editor to a new scene using the path of the scene
-@export var next_level: String = "res://scenes/Levels/tutorial_room_1.tscn"
+@export var next_level: String = " "
 
 
 var opened = false

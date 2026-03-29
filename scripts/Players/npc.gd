@@ -6,9 +6,9 @@ extends CharacterBody2D
 @export var lines: Array[String] = [
 	"Who are you? How did you get into the Temple?",
 	"Oh forget that now- please help me save that poor spirit!",
-	"We need the key to open the cage, but they're both so far up...",
+	"We need the key to open the cage.",
 	"Maybe you could use some materials to find a way to jump up!",
-	"Oh, Thank you! Thank you! That was admirable!",
+	"Oh, thank you! Thank you! That was admirable!",
 	"Your incredible talents could help us around here.",
 	"Please, meet me outside the temple so I can explain further!",
 	"Go to the door at the end of the room, use the lever to open it."

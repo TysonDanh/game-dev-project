@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://bjbqfuaupifjx"]
 
 [ext_resource type="Script" uid="uid://b455iib87i4fj" path="res://scripts/interactLabel/interacting_component.gd" id="1_xa01l"]
+[ext_resource type="FontFile" uid="uid://dg7pcepu3xmyy" path="res://assets/fonts/Vincendo_Font_0_99/OpenType (.otf)/Vincendo-Regular.otf" id="3_xcs75"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqmmv"]
 radius = 95.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_xa01l"]
+font = ExtResource("3_xcs75")
 font_size = 47
+font_color = Color(0.28235295, 0.27450982, 0.5529412, 1)
 
 [node name="interactingComponent" type="Node2D" unique_id=111182433]
 script = ExtResource("1_xa01l")

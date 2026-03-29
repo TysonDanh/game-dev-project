@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://qlryiauu5lg2"]
 
 [ext_resource type="PackedScene" uid="uid://cdk827s6pi6th" path="res://scenes/BuildController.tscn" id="1_bnbe8"]
+[ext_resource type="Script" uid="uid://c562m0bqta3uk" path="res://scripts/1_1_level.gd" id="1_sr8o2"]
 [ext_resource type="Texture2D" uid="uid://ssns3bls400p" path="res://assets/Level_1_Assets_V01/V02_Layer_01.PNG" id="2_gr6xr"]
 [ext_resource type="Texture2D" uid="uid://dkmy2q6tekahl" path="res://assets/Level_1_Assets_V01/V02_Layer_02.PNG" id="3_2daym"]
 [ext_resource type="Texture2D" uid="uid://6dlp7gxn0i0k" path="res://assets/Level_1_Assets_V01/V02_Layer_03.PNG" id="4_e51o7"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bcrjaniidpk6e" path="res://UI/inv_ui.tscn" id="18_e51o7"]
 [ext_resource type="PackedScene" uid="uid://dt1q7q2x0fgk3" path="res://scenes/npc.tscn" id="18_f67fi"]
 [ext_resource type="PackedScene" uid="uid://bvr3bjdbc5qeu" path="res://UI/spirit_counter.tscn" id="19_2rfcu"]
+[ext_resource type="AudioStream" uid="uid://ddmqsyu055fb2" path="res://assets/sounds/Lumereth.wav" id="22_2rfcu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gr6xr"]
 atlas = ExtResource("6_w3iaj")
@@ -844,7 +846,12 @@ sources/0 = SubResource("TileSetAtlasSource_fcqlo")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3iaj"]
 size = Vector2(300.1875, 60.625)
 
-[node name="1-1 Level" type="Node2D" unique_id=33099016]
+[node name="1-1 Level" type="Node2D" unique_id=33099016 node_paths=PackedStringArray("character_a", "character_b", "player", "checkpoint_marker")]
+script = ExtResource("1_sr8o2")
+character_a = NodePath("Players/Player Blue")
+character_b = NodePath("Players/Player Red")
+player = NodePath("Players/Player Blue")
+checkpoint_marker = NodePath("CheckpointMarker")
 
 [node name="BuildController" parent="." unique_id=1993715933 instance=ExtResource("1_bnbe8")]
 position = Vector2(-11, -269)
@@ -1292,3 +1299,8 @@ lines = Array[String](["Oh, Thank you! Thank you! That was admirable!", "Your in
 
 [node name="CheckpointMarker" type="Node2D" parent="." unique_id=1147465683]
 position = Vector2(-2798, 762)
+
+[node name="AudioStreamPlayer - BGMusic" type="AudioStreamPlayer" parent="." unique_id=1853509843]
+stream = ExtResource("22_2rfcu")
+
+[connection signal="building_toggle" from="BuildController" to="Players/Player Red" method="_on_build_controller_building_toggle"]

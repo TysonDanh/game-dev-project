@@ -27,7 +27,7 @@ region_rect = Rect2(0, 165.5, 266, 64.5)
 
 [node name="Interactable" parent="." unique_id=289338002 instance=ExtResource("2_fkq7d")]
 position = Vector2(-131, 33)
-interact_name = "[E] Break Floor"
+interact_name = "Break Floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=472191530]
 position = Vector2(131, -32)

@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bkgevowgn42au" path="res://assets/sprites/Blue_Jump.png" id="5_bwbfx"]
 [ext_resource type="Texture2D" uid="uid://cflirgxh8lckc" path="res://assets/sprites/Blue_Ability_2.png" id="5_u1jie"]
 [ext_resource type="Texture2D" uid="uid://bl0o8i3g1afmq" path="res://assets/sprites/Blue_Ability_1.png" id="6_61krm"]
+[ext_resource type="AudioStream" uid="uid://dydgrpfigbyo1" path="res://assets/sounds/freesound_community-jump_c_02-102843.mp3" id="9_u1jie"]
+[ext_resource type="AudioStream" uid="uid://c27mej88luaft" path="res://assets/sounds/freesound_community-rock-destroy-6409.mp3" id="10_61krm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -241,7 +243,7 @@ inv = ExtResource("2_x1ier")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880643034]
 position = Vector2(74, -91)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192442230]
@@ -250,3 +252,9 @@ shape = SubResource("CircleShape2D_ur7pv")
 
 [node name="interactingComponent" parent="." unique_id=24695621 instance=ExtResource("3_qhqgy")]
 position = Vector2(73, -115)
+
+[node name="AudioStreamPlayer - Jumping" type="AudioStreamPlayer2D" parent="." unique_id=1746897480]
+stream = ExtResource("9_u1jie")
+
+[node name="AudioStreamPlayer - Breaking Rocks" type="AudioStreamPlayer2D" parent="." unique_id=1394071585]
+stream = ExtResource("10_61krm")

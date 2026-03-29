@@ -90,7 +90,7 @@ frame_progress = 0.8754547
 shape = SubResource("CapsuleShape2D_137ry")
 
 [node name="Interactable" parent="." unique_id=1367477917 instance=ExtResource("2_ftjy4")]
-interact_name = "[E] Pick up Key"
+interact_name = "Pick up Key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=88591509]
 shape = SubResource("CapsuleShape2D_m1ru7")

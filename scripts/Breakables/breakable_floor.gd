@@ -6,7 +6,15 @@ extends Node2D
 @export var rock_scene: PackedScene
 @export var rock_count :=2
 
+enum InteractionType { BREAK }
 
+@export var interaction_type: InteractionType = InteractionType.BREAK
+var is_interactable := true
+var is_breakable := true
+var interact_name := "Break"
+var interact: Callable
+
+signal on_break(anim_name: String)
 
 
 func _ready() -> void:
@@ -20,8 +28,11 @@ func _on_interact():
 	
 	for i in  range(rock_count):
 		var rock = rock_scene.instantiate() as RigidBody2D
-		rock.global_position = global_position + Vector2(randf_range(-16, 16), randf_range(-16, 16))
+		rock.global_position = global_position + Vector2(randf_range(-16, 16), randf_range(-48, -16))
 		get_parent().add_child(rock)
+		
+		rock.set_collision_layer_value(3, true)   
+		rock.set_collision_mask_value(3, false)   
 		
 		rock.apply_impulse(Vector2.ZERO, Vector2(randf_range(-100, 100), randf_range(-200, -50)))
 		
