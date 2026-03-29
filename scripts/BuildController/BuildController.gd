@@ -219,3 +219,7 @@ func _clear_ghost() -> void:
 		ghost.queue_free()
 		ghost = null
 	emit_signal("building_toggle", false)
+
+
+func _on_building_toggle(is_on: bool) -> void:
+	pass # Replace with function body.

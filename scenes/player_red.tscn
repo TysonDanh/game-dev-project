@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://o52vvkp3g3yf" path="res://assets/sprites/Red_Jump.png" id="5_lae3m"]
 [ext_resource type="Texture2D" uid="uid://dl1r27hp5wj2h" path="res://assets/sprites/Red_Run.png" id="6_7kt4s"]
 [ext_resource type="PackedScene" uid="uid://bjbqfuaupifjx" path="res://interaction_components/interacting_component.tscn" id="7_kkjs2"]
+[ext_resource type="Script" uid="uid://dys7nn1kf253y" path="res://interaction_components/interaction_component_red.gd" id="8_lnxx2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kt4s"]
 atlas = ExtResource("2_7kt4s")
@@ -256,3 +257,4 @@ shape = SubResource("CircleShape2D_uciss")
 
 [node name="interactingComponent" parent="." unique_id=111182433 instance=ExtResource("7_kkjs2")]
 position = Vector2(78, -115)
+script = ExtResource("8_lnxx2")

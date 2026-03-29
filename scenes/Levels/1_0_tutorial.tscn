@@ -539,7 +539,7 @@ checkpoint_marker = NodePath("CheckpointMarker")
 position = Vector2(-11, -269)
 placed_path = NodePath(".")
 
-[node name="Ghost" type="Node2D" parent="BuildController" unique_id=891319494]
+[node name="Ghost" type="Node2D" parent="BuildController" unique_id=1138982458]
 
 [node name="Parallax Background" type="Node2D" parent="." unique_id=896947348]
 
@@ -689,3 +689,5 @@ position = Vector2(-2798, 762)
 
 [node name="AudioStreamPlayer - BGMusic" type="AudioStreamPlayer" parent="." unique_id=1338227308]
 stream = ExtResource("21_1vbh8")
+
+[connection signal="building_toggle" from="BuildController" to="Players/Player Red" method="_on_build_controller_building_toggle"]

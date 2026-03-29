@@ -821,7 +821,7 @@ script = ExtResource("1_8vga5")
 position = Vector2(-11, -269)
 placed_path = NodePath(".")
 
-[node name="Ghost" type="Node2D" parent="BuildController" unique_id=909712922]
+[node name="Ghost" type="Node2D" parent="BuildController" unique_id=234066418]
 
 [node name="Parallax Background" type="Node2D" parent="." unique_id=1826718702]
 
@@ -1085,3 +1085,5 @@ position = Vector2(-3103, 754)
 
 [node name="AudioStreamPlayer - BGMusic" type="AudioStreamPlayer" parent="." unique_id=976312555]
 stream = ExtResource("21_2d2sc")
+
+[connection signal="building_toggle" from="BuildController" to="Players/Player Red" method="_on_build_controller_building_toggle"]
