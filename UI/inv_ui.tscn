@@ -65,13 +65,3 @@ layout_mode = 2
 
 [node name="inv_slot3" parent="NinePatchRect/GridContainer" unique_id=1372815079 instance=ExtResource("3_cn3dg")]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="." unique_id=1731246726]
-layout_mode = 0
-offset_left = -129.842
-offset_top = -60.496002
-offset_right = 230.158
-offset_bottom = 31.0
-text = "Blue"
-horizontal_alignment = 1
-vertical_alignment = 1

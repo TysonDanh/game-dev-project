@@ -1,3 +1,4 @@
+class_name InteractionComponent
 extends Node2D
 
 
@@ -17,11 +18,13 @@ func _input(event: InputEvent) -> void:
 			can_interact = true
 
 
+
 func _process(delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
-			interact_label.text = current_interactions[0].interact_name
+			var key = OS.get_keycode_string(InputMap.action_get_events("interact_blue")[0].physical_keycode)
+			interact_label.text = "[" + key + "] " + current_interactions[0].interact_name
 			interact_label.show()
 	else:
 		interact_label.hide()
@@ -50,5 +53,6 @@ func _on_interact_range_area_exited(area: Area2D) -> void:
 func _on_break_animation(anim_name: String):
 	get_parent().is_breaking = true
 	get_parent().get_node("AnimatedSprite2D").play(anim_name)
+	get_parent().get_node("AudioStreamPlayer - Breaking Rocks").play()
 	await get_parent().get_node("AnimatedSprite2D").animation_finished
 	get_parent().is_breaking = false

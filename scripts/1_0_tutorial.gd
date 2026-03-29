@@ -4,6 +4,8 @@ extends Node2D
 @export var character_b: Node2D
 @export var checkpoint_x: float = 800.0
 
+@onready var audioMusicBG = $"AudioStreamPlayer - BGMusic"
+
 var intro_done = false
 var checkpoint_done = false
 
@@ -11,6 +13,7 @@ var checkpoint_done = false
 @export var checkpoint_marker: Node2D
 
 func _ready():
+	audioMusicBG.play()
 	await get_tree().process_frame
 	await get_tree().process_frame
 	_start_intro_dialog()
@@ -23,6 +26,7 @@ func _process(_delta):
 	if player.global_position.x >= checkpoint_marker.global_position.x:
 		checkpoint_done = true
 		_start_checkpoint_dialog()
+		
 
 func _start_intro_dialog():
 	if intro_done:

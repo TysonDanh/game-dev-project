@@ -84,7 +84,7 @@ shape = SubResource("CircleShape2D_qxmkn")
 
 [node name="Interactable" parent="." unique_id=1467009406 instance=ExtResource("2_ncfea")]
 position = Vector2(0, -1)
-interact_name = "[E] Switch"
+interact_name = "Switch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2014989091]
 shape = SubResource("CircleShape2D_8di2w")
