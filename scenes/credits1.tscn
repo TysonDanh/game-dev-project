@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ck8sb74nl1ypv"]
+
+[ext_resource type="Texture2D" uid="uid://cn6ny3th1w46h" path="res://assets/Credits/Credits_Layout_Example.png" id="1_a0hcy"]
+[ext_resource type="Script" uid="uid://b30opsebbphon" path="res://scripts/credits.gd" id="2_7mb2g"]
+
+[node name="Control" type="Control" unique_id=1508251963]
+layout_mode = 3
+anchor_right = 0.897
+anchor_bottom = 1.0
+offset_left = 4.2193604
+offset_right = -3.4470215
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credit1" type="Sprite2D" parent="." unique_id=491918449]
+position = Vector2(957.78064, 540)
+scale = Vector2(1.0048019, 1)
+texture = ExtResource("1_a0hcy")
+
+[node name="Next" type="Button" parent="Credit1" unique_id=186234493]
+offset_left = -154.0
+offset_top = 426.0
+offset_right = 93.0
+offset_bottom = 483.0
+text = "Next"
+script = ExtResource("2_7mb2g")
+
+[node name="Menu" type="Button" parent="Credit1" unique_id=1131865226]
+offset_left = -591.0
+offset_top = 429.0
+offset_right = -344.0
+offset_bottom = 486.0
+text = "Menu"
+script = ExtResource("2_7mb2g")
+
+[connection signal="pressed" from="Credit1/Next" to="Credit1/Next" method="_on_Next_pressed"]
+[connection signal="pressed" from="Credit1/Menu" to="Credit1/Menu" method="_on_Menu_pressed"]
