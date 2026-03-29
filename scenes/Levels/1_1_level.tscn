@@ -1292,3 +1292,5 @@ lines = Array[String](["Oh, Thank you! Thank you! That was admirable!", "Your in
 
 [node name="CheckpointMarker" type="Node2D" parent="." unique_id=1147465683]
 position = Vector2(-2798, 762)
+
+[connection signal="building_toggle" from="BuildController" to="Players/Player Red" method="_on_build_controller_building_toggle"]

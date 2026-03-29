@@ -12,7 +12,7 @@ extends Node2D
 @onready var placed_root: Node2D = get_node(placed_path)
 @onready var ghost_holder: Node2D = $Ghost
 
-
+signal building_toggle(is_on: bool)
 
 # Types of building.
 enum BuildType { WALL, FLOOR }
@@ -31,16 +31,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	_update_ghost()
 
-# Here I have to Connect this script to player_red to trigger the building variable and set to true.
-#
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		# Select Wall
-		if event.keycode == KEY_1 or event.keycode == KEY_KP_1:
+		if event.keycode == KEY_1:
 			_select_build(BuildType.WALL)
+			emit_signal("building_toggle", true)
 		# Select Floor
-		if event.keycode == KEY_2 or event.keycode == KEY_KP_2:
+		if event.keycode == KEY_2:
+			emit_signal("building_toggle", true)
 			_select_build(BuildType.FLOOR)
 		# Rotate with R
 		if event.keycode == KEY_R:
@@ -58,7 +57,7 @@ func _select_build(t: BuildType) -> void:
 		build_active = false
 		_clear_ghost()
 		return
-
+	
 	selected_build = t
 	build_active = true
 	rotate_steps = 0
@@ -68,7 +67,7 @@ func _refresh_ghost() -> void:
 	if ghost:
 		ghost.queue_free()
 		ghost = null
-
+	# sets ghost to wall or floor
 	var scene := _get_selected_scene()
 	if scene == null:
 		return
@@ -103,32 +102,32 @@ func _update_ghost() -> void:
 	# Tint red if you can't afford
 	var can_afford := (inv != null and rock_item != null and _count_rocks() >= _get_selected_cost())
 	_force_modulate(ghost, Color(1, 1, 1, 0.35) if can_afford else Color(1, 0.4, 0.4, 0.35))
-# Here we have to set building to false after placing a floor in player_red
+
 func _try_place() -> void:
 	if inv == null or rock_item == null or ghost == null:
 		return
-
+	
 	var cost := _get_selected_cost()
 	if _count_rocks() < cost:
 		return
-
+	
 	if not _spend_rocks(cost):
 		return
-
+	
 	var scene := _get_selected_scene()
 	if scene == null:
 		return
-
+	
 	var placed := scene.instantiate() as Node2D
 	placed_root.add_child(placed)
-
+	
 	# Place using world position.
 	placed.global_position = snapped_world_pos
 	placed.global_rotation = ghost.global_rotation
 		
 	# Visible + bring to front
 	_force_render(placed, 40, 1.0)
-
+	
 	# Debug (remove later)
 	print("Placed at:", placed.global_position, " ghost at:", ghost.global_position, " snapped:", snapped_world_pos)
 	if _count_rocks() < _get_selected_cost():
@@ -219,3 +218,4 @@ func _clear_ghost() -> void:
 	if ghost:
 		ghost.queue_free()
 		ghost = null
+	emit_signal("building_toggle", false)

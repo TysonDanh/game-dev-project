@@ -241,7 +241,7 @@ inv = ExtResource("2_x1ier")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880643034]
 position = Vector2(74, -91)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192442230]
