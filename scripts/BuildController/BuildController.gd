@@ -37,8 +37,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode == KEY_1:
 			_select_build(BuildType.WALL)
 			emit_signal("building_toggle", true)
-		# Select Floor
-		if event.keycode == KEY_2:
+		# Select Floord
+		if event.keycode == KEY_KP_9:
 			emit_signal("building_toggle", true)
 			_select_build(BuildType.FLOOR)
 		# Rotate with R

@@ -14,6 +14,3 @@ func _process(delta: float) -> void:
 		var blue_pos = Player_Blue.global_position
 		var centre = (red_pos + blue_pos) / 2
 		global_position = global_position.lerp(centre, 0.1)
-	
-	
-	pass

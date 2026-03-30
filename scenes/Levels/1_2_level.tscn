@@ -879,126 +879,122 @@ stretch_mode = 1
 
 [node name="Interactables" type="Node2D" parent="." unique_id=578364250]
 
-[node name="key" parent="Interactables" unique_id=1042843681 instance=ExtResource("12_m2iuc")]
-position = Vector2(-7910, -425)
+[node name="Door" parent="Interactables" unique_id=895583818 instance=ExtResource("12_ay5qy")]
+position = Vector2(11647, 72)
 
-[node name="spirit_caged" parent="Interactables" unique_id=1068791856 instance=ExtResource("6_pe87f")]
-position = Vector2(-4801, -931)
+[node name="Lever" parent="Interactables" unique_id=1804500831 instance=ExtResource("13_2d2sc")]
+position = Vector2(11176, 152)
+doors = NodePath("../Door")
 
-[node name="spirit_caged2" parent="Interactables" unique_id=1892192211 instance=ExtResource("6_pe87f")]
-position = Vector2(-6915, 643)
+[node name="Ghost floors" type="Node2D" parent="Interactables" unique_id=1343022074]
 
-[node name="key2" parent="Interactables" unique_id=1377659253 instance=ExtResource("12_m2iuc")]
-position = Vector2(-4651, 353)
+[node name="ghostfloor8" parent="Interactables/Ghost floors" unique_id=589440018 instance=ExtResource("15_x5ud6")]
+position = Vector2(9296, -162)
 
-[node name="breakableWall" parent="Interactables" unique_id=746560861 instance=ExtResource("13_jee4g")]
-position = Vector2(-6754, 846)
+[node name="ghostfloor7" parent="Interactables/Ghost floors" unique_id=1952314170 instance=ExtResource("15_x5ud6")]
+position = Vector2(-163, 482)
 
-[node name="Rock2" parent="Interactables" unique_id=2097201099 instance=ExtResource("14_v8n88")]
-position = Vector2(-5979, 993)
+[node name="ghostfloor6" parent="Interactables/Ghost floors" unique_id=821087365 instance=ExtResource("15_x5ud6")]
+position = Vector2(4090, 275)
 
-[node name="Rock" parent="Interactables" unique_id=430784051 instance=ExtResource("14_v8n88")]
-position = Vector2(-5762, 1114)
+[node name="ghostfloor5" parent="Interactables/Ghost floors" unique_id=1625449185 instance=ExtResource("15_x5ud6")]
+position = Vector2(10267, 409)
 
-[node name="ghostfloor" parent="Interactables" unique_id=197935306 instance=ExtResource("15_x5ud6")]
-position = Vector2(-5957, 717)
+[node name="ghostfloor4" parent="Interactables/Ghost floors" unique_id=659830900 instance=ExtResource("15_x5ud6")]
+position = Vector2(-2038, -537)
 
-[node name="ghostfloor2" parent="Interactables" unique_id=1014360431 instance=ExtResource("15_x5ud6")]
+[node name="ghostfloor3" parent="Interactables/Ghost floors" unique_id=319388418 instance=ExtResource("15_x5ud6")]
+position = Vector2(-464, -176)
+
+[node name="ghostfloor2" parent="Interactables/Ghost floors" unique_id=1014360431 instance=ExtResource("15_x5ud6")]
 position = Vector2(-5540, 501)
 
-[node name="Moving Platform 1" type="StaticBody2D" parent="Interactables" unique_id=1035511136]
+[node name="ghostfloor" parent="Interactables/Ghost floors" unique_id=197935306 instance=ExtResource("15_x5ud6")]
+position = Vector2(-5957, 717)
+
+[node name="Moveable Platforms" type="Node2D" parent="Interactables" unique_id=460016527]
+
+[node name="Moving Platform 1" type="StaticBody2D" parent="Interactables/Moveable Platforms" unique_id=1035511136]
 metadata/ID = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moving Platform 1" unique_id=282772343]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moveable Platforms/Moving Platform 1" unique_id=282772343]
 position = Vector2(-493, 273)
 shape = SubResource("RectangleShape2D_ata2h")
 disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moving Platform 1/CollisionShape2D" unique_id=1098633004]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moveable Platforms/Moving Platform 1/CollisionShape2D" unique_id=1098633004]
 position = Vector2(-1, 7)
 rotation = 0.0009990149
 scale = Vector2(1.1874995, 1)
 sprite_frames = SubResource("SpriteFrames_jx1my")
 animation = &"extend_left"
 
-[node name="button" parent="Interactables/Moving Platform 1/CollisionShape2D" unique_id=1834029336 instance=ExtResource("17_jx1my")]
+[node name="button" parent="Interactables/Moveable Platforms/Moving Platform 1/CollisionShape2D" unique_id=1834029336 instance=ExtResource("17_jx1my")]
 position = Vector2(1539, 225)
 parent_collision_shape_path = NodePath("..")
 parent_animated_sprite_path = NodePath("../AnimatedSprite2D")
 parent_animation_name = "extend_left"
 disable_parent_collision = false
 
-[node name="Moving Platform 2" type="StaticBody2D" parent="Interactables" unique_id=1224727067]
+[node name="Moving Platform 2" type="StaticBody2D" parent="Interactables/Moveable Platforms" unique_id=1224727067]
 metadata/ID = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moving Platform 2" unique_id=527285711]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moveable Platforms/Moving Platform 2" unique_id=527285711]
 position = Vector2(-2609.5, 475)
 shape = SubResource("RectangleShape2D_jx1my")
 disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moving Platform 2/CollisionShape2D" unique_id=1575801741]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moveable Platforms/Moving Platform 2/CollisionShape2D" unique_id=1575801741]
 position = Vector2(4.5, 7)
 rotation = 0.000999015
 scale = Vector2(1.1874995, 1)
 sprite_frames = SubResource("SpriteFrames_jx1my")
 animation = &"open_pointing_right"
 
-[node name="button" parent="Interactables/Moving Platform 2/CollisionShape2D" unique_id=1674283014 instance=ExtResource("17_jx1my")]
+[node name="button" parent="Interactables/Moveable Platforms/Moving Platform 2/CollisionShape2D" unique_id=1674283014 instance=ExtResource("17_jx1my")]
 position = Vector2(-3744.5, 344)
 parent_collision_shape_path = NodePath("..")
 parent_animated_sprite_path = NodePath("../AnimatedSprite2D")
 parent_animation_name = "extend_left"
 disable_parent_collision = false
 
-[node name="key3" parent="Interactables" unique_id=1591075981 instance=ExtResource("12_m2iuc")]
-position = Vector2(2482, -868)
-
-[node name="spirit_caged3" parent="Interactables" unique_id=885438660 instance=ExtResource("6_pe87f")]
-position = Vector2(3455, 189)
-
-[node name="spirit_caged4" parent="Interactables" unique_id=955555091 instance=ExtResource("6_pe87f")]
-position = Vector2(8222, -81)
-
-[node name="breakableWall2" parent="Interactables" unique_id=1277610455 instance=ExtResource("13_jee4g")]
-position = Vector2(729, 531)
-
-[node name="Moving Platform 3" type="StaticBody2D" parent="Interactables" unique_id=1381350935]
+[node name="Moving Platform 3" type="StaticBody2D" parent="Interactables/Moveable Platforms" unique_id=1381350935]
 metadata/ID = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moving Platform 3" unique_id=350232685]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moveable Platforms/Moving Platform 3" unique_id=350232685]
 position = Vector2(7779, -98)
 shape = SubResource("RectangleShape2D_ay5qy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moving Platform 3/CollisionShape2D" unique_id=195283866]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moveable Platforms/Moving Platform 3/CollisionShape2D" unique_id=195283866]
 position = Vector2(6, -48)
 rotation = -1.5720006
 scale = Vector2(1.1874995, 1)
 sprite_frames = SubResource("SpriteFrames_jx1my")
 animation = &"retract_left"
 
-[node name="button" parent="Interactables/Moving Platform 3/CollisionShape2D" unique_id=1729993400 instance=ExtResource("17_jx1my")]
+[node name="button" parent="Interactables/Moveable Platforms/Moving Platform 3/CollisionShape2D" unique_id=1729993400 instance=ExtResource("17_jx1my")]
 position = Vector2(-4274.0005, 921.00006)
 scale = Vector2(1.0000001, 1.0000001)
 parent_collision_shape_path = NodePath("..")
 parent_animated_sprite_path = NodePath("../AnimatedSprite2D")
 parent_animation_name = "retract_left"
 
-[node name="Moving Platform 4" type="StaticBody2D" parent="Interactables" unique_id=1730907920]
+[node name="Moving Platform 4" type="StaticBody2D" parent="Interactables/Moveable Platforms" unique_id=1730907920]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moving Platform 4" unique_id=59678294]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Moveable Platforms/Moving Platform 4" unique_id=59678294]
 position = Vector2(-14.000002, 10)
 rotation = -0.004674821
 shape = SubResource("RectangleShape2D_2d2sc")
 disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moving Platform 4/CollisionShape2D" unique_id=1992280057]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactables/Moveable Platforms/Moving Platform 4/CollisionShape2D" unique_id=1992280057]
 position = Vector2(-4.9672194, -7.0232983)
 rotation = -3.1400535
 scale = Vector2(1.1874995, 1)
 sprite_frames = SubResource("SpriteFrames_jx1my")
 animation = &"open_pointing_right"
 
-[node name="button" parent="Interactables/Moving Platform 4/CollisionShape2D" unique_id=500823968 instance=ExtResource("17_jx1my")]
+[node name="button" parent="Interactables/Moveable Platforms/Moving Platform 4/CollisionShape2D" unique_id=500823968 instance=ExtResource("17_jx1my")]
 position = Vector2(-1396.8573, -675.5374)
 rotation = 0.004674821
 scale = Vector2(1, 1.0000001)
@@ -1007,42 +1003,64 @@ parent_animated_sprite_path = NodePath("../AnimatedSprite2D")
 parent_animation_name = "extend_left"
 disable_parent_collision = false
 
-[node name="breakableWall3" parent="Interactables" unique_id=1876124630 instance=ExtResource("13_jee4g")]
+[node name="Breakables" type="Node2D" parent="Interactables" unique_id=1023687405]
+
+[node name="breakableWall" parent="Interactables/Breakables" unique_id=746560861 instance=ExtResource("13_jee4g")]
+position = Vector2(-6754, 846)
+
+[node name="breakableWall2" parent="Interactables/Breakables" unique_id=1277610455 instance=ExtResource("13_jee4g")]
+position = Vector2(729, 531)
+
+[node name="breakableWall3" parent="Interactables/Breakables" unique_id=1876124630 instance=ExtResource("13_jee4g")]
 position = Vector2(8665, 13)
 
-[node name="ghostfloor3" parent="Interactables" unique_id=319388418 instance=ExtResource("15_x5ud6")]
-position = Vector2(-464, -176)
-
-[node name="breakableWall4" parent="Interactables" unique_id=1808232002 instance=ExtResource("13_jee4g")]
+[node name="breakableWall4" parent="Interactables/Breakables" unique_id=1808232002 instance=ExtResource("13_jee4g")]
 position = Vector2(5042, 655)
 
-[node name="ghostfloor4" parent="Interactables" unique_id=589440018 instance=ExtResource("15_x5ud6")]
-position = Vector2(-2038, -537)
-
-[node name="ghostfloor5" parent="Interactables" unique_id=1625449185 instance=ExtResource("15_x5ud6")]
-position = Vector2(10267, 409)
-
-[node name="ghostfloor6" parent="Interactables" unique_id=821087365 instance=ExtResource("15_x5ud6")]
-position = Vector2(4090, 275)
-
-[node name="breakableWall5" parent="Interactables" unique_id=1592092887 instance=ExtResource("13_jee4g")]
+[node name="breakableWall5" parent="Interactables/Breakables" unique_id=1592092887 instance=ExtResource("13_jee4g")]
 position = Vector2(-4525, -366)
 
-[node name="ghostfloor7" parent="Interactables" unique_id=1952314170 instance=ExtResource("15_x5ud6")]
-position = Vector2(-163, 482)
+[node name="Rocks" type="Node2D" parent="Interactables" unique_id=844237202]
 
-[node name="Rock3" parent="Interactables" unique_id=527782702 instance=ExtResource("14_v8n88")]
+[node name="Rock" parent="Interactables/Rocks" unique_id=430784051 instance=ExtResource("14_v8n88")]
+position = Vector2(-5762, 1114)
+
+[node name="Rock2" parent="Interactables/Rocks" unique_id=2097201099 instance=ExtResource("14_v8n88")]
+position = Vector2(-5979, 993)
+
+[node name="Rock3" parent="Interactables/Rocks" unique_id=527782702 instance=ExtResource("14_v8n88")]
 position = Vector2(909, 492)
 
-[node name="Rock4" parent="Interactables" unique_id=973553247 instance=ExtResource("14_v8n88")]
+[node name="Rock4" parent="Interactables/Rocks" unique_id=973553247 instance=ExtResource("14_v8n88")]
 position = Vector2(1194, 492)
 
-[node name="Door" parent="Interactables" unique_id=895583818 instance=ExtResource("12_ay5qy")]
-position = Vector2(11647, 72)
+[node name="Cages" type="Node2D" parent="Interactables" unique_id=270754359]
 
-[node name="Lever" parent="Interactables" unique_id=1804500831 instance=ExtResource("13_2d2sc")]
-position = Vector2(11176, 152)
-doors = NodePath("../Door")
+[node name="spirit_caged" parent="Interactables/Cages" unique_id=1068791856 instance=ExtResource("6_pe87f")]
+position = Vector2(-4801, -931)
+
+[node name="spirit_caged2" parent="Interactables/Cages" unique_id=1892192211 instance=ExtResource("6_pe87f")]
+position = Vector2(-6915, 643)
+
+[node name="spirit_caged3" parent="Interactables/Cages" unique_id=885438660 instance=ExtResource("6_pe87f")]
+position = Vector2(3455, 189)
+
+[node name="spirit_caged4" parent="Interactables/Cages" unique_id=955555091 instance=ExtResource("6_pe87f")]
+position = Vector2(8222, -81)
+
+[node name="Keys" type="Node2D" parent="Interactables" unique_id=1423530305]
+
+[node name="key" parent="Interactables/Keys" unique_id=1042843681 instance=ExtResource("12_m2iuc")]
+position = Vector2(-7910, -425)
+
+[node name="key2" parent="Interactables/Keys" unique_id=1377659253 instance=ExtResource("12_m2iuc")]
+position = Vector2(-4651, 353)
+
+[node name="key3" parent="Interactables/Keys" unique_id=1591075981 instance=ExtResource("12_m2iuc")]
+position = Vector2(2482, -868)
+
+[node name="key4" parent="Interactables/Keys" unique_id=822250934 instance=ExtResource("12_m2iuc")]
+position = Vector2(9683, -756)
 
 [node name="Foreground" type="Node2D" parent="." unique_id=12679710]
 
@@ -1053,29 +1071,29 @@ tile_set = SubResource("TileSet_j4cwr")
 [node name="Players" type="Node2D" parent="." unique_id=939402369]
 position = Vector2(-22, -2)
 
-[node name="Player Red" parent="Players" unique_id=360523801 instance=ExtResource("7_j4cwr")]
-position = Vector2(-6957, -138)
-
-[node name="Player Blue" parent="Players" unique_id=1426815937 instance=ExtResource("6_h6x4a")]
-position = Vector2(-7189, -147)
-
-[node name="Camera2D" type="Camera2D" parent="Players/Player Blue" unique_id=558751362 node_paths=PackedStringArray("Player_Red", "Player_Blue")]
-position = Vector2(226, -158)
+[node name="Camera2D" type="Camera2D" parent="Players" unique_id=558751362 node_paths=PackedStringArray("Player_Red", "Player_Blue")]
+position = Vector2(-6963, -305)
 script = ExtResource("8_pe87f")
-Player_Red = NodePath("../../Player Red")
-Player_Blue = NodePath("..")
+Player_Red = NodePath("../Player Red")
+Player_Blue = NodePath("../Player Blue")
 
-[node name="Inv_UI" parent="Players/Player Blue/Camera2D" unique_id=540233511 instance=ExtResource("9_m2iuc")]
+[node name="Inv_UI" parent="Players/Camera2D" unique_id=540233511 instance=ExtResource("9_m2iuc")]
 offset_left = -1061.0
 offset_top = 369.0
 offset_right = -716.0
 offset_bottom = 498.0
 
-[node name="spirit_counter" parent="Players/Player Blue/Camera2D" unique_id=320775854 instance=ExtResource("10_jee4g")]
+[node name="spirit_counter" parent="Players/Camera2D" unique_id=320775854 instance=ExtResource("10_jee4g")]
 offset_left = -1072.0
 offset_top = -529.0
 offset_right = -1072.0
 offset_bottom = -529.0
+
+[node name="Player Red" parent="Players" unique_id=360523801 instance=ExtResource("7_j4cwr")]
+position = Vector2(-6957, -138)
+
+[node name="Player Blue" parent="Players" unique_id=1426815937 instance=ExtResource("6_h6x4a")]
+position = Vector2(-7189, -147)
 
 [node name="NPCs" type="Node2D" parent="." unique_id=532763238]
 position = Vector2(0, -59)
