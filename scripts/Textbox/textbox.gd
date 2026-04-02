@@ -63,7 +63,7 @@ func _display_letter():
 	await get_tree().process_frame
 
 	global_position.x = base_position.x - size.x / 2.0
-	global_position.y = base_position.y - size.y - 8.0
+	global_position.y = base_position.y - size.y - 50
 
 	if letter_index >= text.length():
 		finished_displaying.emit()

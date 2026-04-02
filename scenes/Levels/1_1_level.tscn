@@ -850,6 +850,7 @@ size = Vector2(300.1875, 60.625)
 script = ExtResource("1_sr8o2")
 character_a = NodePath("Players/Player Blue")
 character_b = NodePath("Players/Player Red")
+checkpoint_x = -3446.0
 player = NodePath("Players/Player Blue")
 checkpoint_marker = NodePath("CheckpointMarker")
 
@@ -1081,7 +1082,7 @@ position = Vector2(-5115, 1256)
 position = Vector2(5910, 710)
 
 [node name="breakableWall3" parent="Interactables" unique_id=1592092887 instance=ExtResource("8_e51o7")]
-position = Vector2(-998, 717)
+position = Vector2(-951, 717)
 
 [node name="Moving Platforms 3" type="StaticBody2D" parent="Interactables" unique_id=1820507653]
 position = Vector2(393.99994, 7.999999)
@@ -1177,10 +1178,10 @@ parent_animated_sprite_path = NodePath("../AnimatedSprite2D")
 parent_animation_name = "retract_right"
 
 [node name="breakableWall4" parent="Interactables" unique_id=2628388 instance=ExtResource("8_e51o7")]
-position = Vector2(-627, 718)
+position = Vector2(-573, 721)
 
 [node name="breakableWall5" parent="Interactables" unique_id=634427196 instance=ExtResource("8_e51o7")]
-position = Vector2(-218, 718)
+position = Vector2(-148, 715)
 
 [node name="breakableWall6" parent="Interactables" unique_id=1790775155 instance=ExtResource("8_e51o7")]
 position = Vector2(210, 720)
@@ -1268,10 +1269,10 @@ offset_bottom = -505.0
 position = Vector2(671, 901)
 
 [node name="ghostfloor" parent="Ghost Floors" unique_id=1590306387 instance=ExtResource("17_ici4c")]
-position = Vector2(-3402, 32)
+position = Vector2(-3405, 51)
 
 [node name="ghostfloor2" parent="Ghost Floors" unique_id=691868129 instance=ExtResource("17_ici4c")]
-position = Vector2(-1467, 857)
+position = Vector2(-1472, 867)
 
 [node name="ghostfloor3" parent="Ghost Floors" unique_id=1807852568 instance=ExtResource("17_ici4c")]
 position = Vector2(1927, 475)
@@ -1283,22 +1284,22 @@ position = Vector2(3064, 475)
 
 [node name="NPC2" parent="NPC" unique_id=1308221139 instance=ExtResource("18_f67fi")]
 position = Vector2(-4854, 243)
-lines = Array[String](["Who are you? How did you get into the Temple?", "Oh forget that now- please help me save that poor spirit!", "We need the key to open the cage, but they're both so far up...", "Maybe you could use some materials to find a way to jump up!"])
+lines = Array[String](["Our home is under attack by a strange creature you see.", "Locking all of our spirits.", "You're guys power to manipulate the rocks will greatly help us.", "Please continue to help us"])
 
 [node name="NPC3" parent="NPC" unique_id=834816597 instance=ExtResource("18_f67fi")]
 position = Vector2(-2013, 995)
-lines = Array[String](["Oh, Thank you! Thank you! That was admirable!", "Your incredible talents could help us around here.", "Please, meet me outside the temple so I can explain further!", "Go to the door at the end of the room, use the lever to open it."])
+lines = Array[String](["Please continue to help us"])
 
 [node name="NPC4" parent="NPC" unique_id=1527325838 instance=ExtResource("18_f67fi")]
 position = Vector2(2284, 1008)
-lines = Array[String](["Oh, Thank you! Thank you! That was admirable!", "Your incredible talents could help us around here.", "Please, meet me outside the temple so I can explain further!", "Go to the door at the end of the room, use the lever to open it."])
+lines = Array[String](["There's another one under the vines, please help!"])
 
 [node name="NPC5" parent="NPC" unique_id=471655042 instance=ExtResource("18_f67fi")]
 position = Vector2(5142, 811)
-lines = Array[String](["Oh, Thank you! Thank you! That was admirable!", "Your incredible talents could help us around here.", "Please, meet me outside the temple so I can explain further!", "Go to the door at the end of the room, use the lever to open it."])
+lines = Array[String](["Thank you for savings all of our spirits!", "The creature is leaving a real mess of things.", "Trapping spirits and just leaving the key around anywhere.", "Please through the door there is more spirits that needs to be saved!"])
 
 [node name="CheckpointMarker" type="Node2D" parent="." unique_id=1147465683]
-position = Vector2(-2798, 762)
+position = Vector2(-3446, 236)
 
 [node name="AudioStreamPlayer - BGMusic" type="AudioStreamPlayer" parent="." unique_id=1853509843]
 stream = ExtResource("22_2rfcu")

@@ -44,7 +44,6 @@ func _start_intro_dialog():
 		"We are not on Mars Bryx...",
 		"Yeah just look how green everything is.",
 	]
-	print("is_dialog_active: ", DialogManager.is_dialog_active)
 	DialogManager.start_conversation(lines, config_a, config_b)
 
 func _start_checkpoint_dialog():
@@ -57,7 +56,6 @@ func _start_checkpoint_dialog():
 		preload("res://UI/textbox_red.tscn")
 	)
 	var lines: Array[String] = [
-		"Let's try building a platform here to free the spirit.",
-		"As long as one of us has the material on us, I can build it.",
+		"Hey there is a button over there. Wonder what it does?"
 	]
 	DialogManager.start_conversation(lines, config_a, config_b)
