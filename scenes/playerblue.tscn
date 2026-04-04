@@ -237,6 +237,7 @@ animations = [{
 radius = 73.24616
 
 [node name="Player Blue" type="CharacterBody2D" unique_id=1426815937 groups=["players"]]
+collision_layer = 5
 script = ExtResource("1_g2els")
 inv = ExtResource("2_x1ier")
 

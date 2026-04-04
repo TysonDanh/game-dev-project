@@ -10,7 +10,7 @@ class_name Interactable
 var interact: Callable = func():
 	pass
 	
-	
+#For the break animation for Blue
 signal on_break(ani_name)
 	
 	

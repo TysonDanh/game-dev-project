@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ds68s3dfih6qm"]
 
-[ext_resource type="Script" uid="uid://diu347tjrb0y5" path="res://scenes/player_red.gd" id="1_6uwjl"]
+[ext_resource type="Script" uid="uid://diu347tjrb0y5" path="res://scripts/Players/player_red.gd" id="1_6uwjl"]
 [ext_resource type="Texture2D" uid="uid://0hla0jaxckan" path="res://assets/sprites/Red_Ability_V01.png" id="2_7kt4s"]
 [ext_resource type="Texture2D" uid="uid://byadkm01cxjsd" path="res://assets/sprites/Red_Ability_V02.png" id="3_kkjs2"]
 [ext_resource type="Texture2D" uid="uid://bkoyna4bhkgh0" path="res://assets/sprites/Red_Idle.png" id="4_lnxx2"]

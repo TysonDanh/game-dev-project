@@ -2,6 +2,7 @@ extends Control
 
 @onready var inv: Inv = preload("res://Inventory/items/playerblueinv.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@export var player: CharacterBody2D
 var is_open = false
 
 func _ready():
@@ -18,9 +19,9 @@ func _process(_delta):
 		var removeitem = inv.drop()
 		if removeitem != null:
 			update_slots()
-			var player_pos = get_parent().position
-			dropitem(removeitem, player_pos)
-		
+			var player = get_tree().get_first_node_in_group("players")
+			if player:                
+				dropitem(removeitem, player.global_position)
 	
 	
 const DROP_SCENES: Dictionary = {
@@ -36,13 +37,7 @@ func dropitem(item: InvItem, position: Vector2):
 		return
 	var instance = DROP_SCENES[item.name].instantiate()
 	instance.item = item
+	var offset = Vector2(randf_range(-20, 20), -16)
+	instance.position = position + offset
 	instance.position = position
 	get_tree().current_scene.add_child(instance)
-
-	
-	
-
-
-
-	
-	

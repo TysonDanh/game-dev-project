@@ -18,7 +18,7 @@ func open_door():
 	animated_Sprite2D.play("Opening")
 	await animated_Sprite2D.animation_finished
 	animated_Sprite2D.play("Opened")
-	$Interactable.interact_name = "[E] Next Level"
+	$Interactable.interact_name = "Next Level"
 
 func _on_interact():
 	if not opened:

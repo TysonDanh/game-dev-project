@@ -12,5 +12,5 @@ func _on_QuitButton_pressed():
 	
 	
 func _on_CreditButton_pressed():
-		get_tree().change_scene_to_file("res://scenes/credits1.tscn")
+		get_tree().change_scene_to_file("res://UI/credits1.tscn")
 		pass # Replace with function body.

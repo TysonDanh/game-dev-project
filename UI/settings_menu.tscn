@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://dxs3o5ntrcqm7"]
+
+[ext_resource type="Texture2D" uid="uid://ha12bcmve71t" path="res://assets/Settings_Assets/Settings_Assets/Settings_Box.png" id="1_cr101"]
+[ext_resource type="Texture2D" uid="uid://1qykk8x8hcka" path="res://assets/Settings_Assets/Settings_Assets/Settings_Options.png" id="2_wswnh"]
+[ext_resource type="Script" uid="uid://df1s25la0nxkf" path="res://scripts/settings_buttons.gd" id="3_wswnh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0eu6"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(0, 4, 448, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiqec"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(448, 0, 450, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h437d"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(0, 74, 448, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tlyv"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(448, 74, 450, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d6lb"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(0, 145, 448, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxj4t"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(448, 145, 450, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl4dm"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(0, 216, 448, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttjgw"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(448, 216, 450, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pph3"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(0, 289, 448, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exc7q"]
+atlas = ExtResource("2_wswnh")
+region = Rect2(448, 289, 450, 66)
+
+[node name="Settings_Menu" type="Control" unique_id=1052549244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_wswnh")
+
+[node name="Settings Menu BG" type="Sprite2D" parent="." unique_id=1984593211]
+position = Vector2(1055, 506)
+texture = ExtResource("1_cr101")
+
+[node name="Resume" type="TextureButton" parent="Settings Menu BG" unique_id=1055381891]
+offset_left = -225.0
+offset_top = -172.0
+offset_right = 223.0
+offset_bottom = -108.0
+texture_normal = SubResource("AtlasTexture_d0eu6")
+texture_hover = SubResource("AtlasTexture_fiqec")
+
+[node name="Main Menu" type="TextureButton" parent="Settings Menu BG" unique_id=1468569508]
+offset_left = -222.0
+offset_top = -83.0
+offset_right = 226.0
+offset_bottom = -19.0
+texture_normal = SubResource("AtlasTexture_h437d")
+texture_hover = SubResource("AtlasTexture_2tlyv")
+
+[node name="Tutorial" type="TextureButton" parent="Settings Menu BG" unique_id=137286976]
+offset_left = -221.0
+offset_top = 2.0
+offset_right = 227.0
+offset_bottom = 66.0
+texture_normal = SubResource("AtlasTexture_2d6lb")
+texture_hover = SubResource("AtlasTexture_nxj4t")
+
+[node name="Level 1-1" type="TextureButton" parent="Settings Menu BG" unique_id=1202272275]
+offset_left = -223.0
+offset_top = 90.0
+offset_right = 225.0
+offset_bottom = 154.0
+texture_normal = SubResource("AtlasTexture_yl4dm")
+texture_hover = SubResource("AtlasTexture_ttjgw")
+
+[node name="Level 1-2" type="TextureButton" parent="Settings Menu BG" unique_id=226186304]
+offset_left = -221.0
+offset_top = 176.0
+offset_right = 227.0
+offset_bottom = 240.0
+texture_normal = SubResource("AtlasTexture_8pph3")
+texture_hover = SubResource("AtlasTexture_exc7q")
+
+[connection signal="pressed" from="Settings Menu BG/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Main Menu" to="Settings Menu BG/Main Menu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Tutorial" to="Settings Menu BG/Tutorial" method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Level 1-1" to="." method="_on_level_1_1_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Level 1-1" to="Settings Menu BG/Level 1-1" method="_on_level_1_1_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Level 1-2" to="." method="_on_level_1_2_pressed"]
+[connection signal="pressed" from="Settings Menu BG/Level 1-2" to="Settings Menu BG/Level 1-2" method="_on_level_1_2_pressed"]

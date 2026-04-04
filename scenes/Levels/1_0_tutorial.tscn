@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://4glqqkbgqpa2"]
 
 [ext_resource type="Script" uid="uid://528n6folg22v" path="res://scripts/1_0_tutorial.gd" id="1_kjben"]
-[ext_resource type="Texture2D" uid="uid://dofm6n4drmw1j" path="res://assets/Tutorial_Assets_V02/Tutorial_Layer01_V02.PNG" id="1_pwfuf"]
-[ext_resource type="Texture2D" uid="uid://cx2s3oyr65vqq" path="res://assets/Tutorial_Assets_V02/Tutorial_Layer02_V02.PNG" id="2_hgthn"]
-[ext_resource type="Texture2D" uid="uid://mohvqnh34pb1" path="res://assets/Tutorial_Assets_V02/Tutorial_Layer03_V02.PNG" id="3_iwjwa"]
-[ext_resource type="Texture2D" uid="uid://cx474adn5wsuc" path="res://assets/Tutorial_Assets_V02/Tutorial_Asset_V02.PNG" id="4_7vuk6"]
+[ext_resource type="Texture2D" uid="uid://dofm6n4drmw1j" path="res://assets/sprites/Tutorial_Assets_V02/Tutorial_Layer01_V02.PNG" id="1_pwfuf"]
+[ext_resource type="Texture2D" uid="uid://cx2s3oyr65vqq" path="res://assets/sprites/Tutorial_Assets_V02/Tutorial_Layer02_V02.PNG" id="2_hgthn"]
+[ext_resource type="Texture2D" uid="uid://mohvqnh34pb1" path="res://assets/sprites/Tutorial_Assets_V02/Tutorial_Layer03_V02.PNG" id="3_iwjwa"]
+[ext_resource type="Texture2D" uid="uid://cx474adn5wsuc" path="res://assets/sprites/Tutorial_Assets_V02/Tutorial_Asset_V02.PNG" id="4_7vuk6"]
 [ext_resource type="PackedScene" uid="uid://dqryqt5bndl7i" path="res://scenes/playerblue.tscn" id="5_hgthn"]
 [ext_resource type="PackedScene" uid="uid://ds68s3dfih6qm" path="res://scenes/player_red.tscn" id="6_7g33h"]
 [ext_resource type="PackedScene" uid="uid://bqo7qhsaryfry" path="res://scenes/Breakable/breakable_floor.tscn" id="6_8t67i"]
 [ext_resource type="PackedScene" uid="uid://cdk827s6pi6th" path="res://scenes/BuildController.tscn" id="6_oavsa"]
-[ext_resource type="Script" uid="uid://7ry7q6x0m65f" path="res://scenes/camera_2d.gd" id="7_0fuu0"]
+[ext_resource type="Script" uid="uid://7ry7q6x0m65f" path="res://scripts/Players/camera_2d.gd" id="7_0fuu0"]
 [ext_resource type="PackedScene" uid="uid://b0603fiu7c2yj" path="res://scenes/Breakable/breakable_wall.tscn" id="7_7g33h"]
 [ext_resource type="PackedScene" uid="uid://cmkwswr1f64wf" path="res://scenes/Breakable/rock.tscn" id="8_0fuu0"]
 [ext_resource type="PackedScene" uid="uid://cfl18xespjbfb" path="res://scenes/ghostfloor.tscn" id="12_prlxl"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://k7gxth4d3yb7" path="res://scenes/Interacts/doors.tscn" id="18_1vbh8"]
 [ext_resource type="PackedScene" uid="uid://bcrjaniidpk6e" path="res://UI/inv_ui.tscn" id="18_tgksj"]
 [ext_resource type="AudioStream" uid="uid://dkl2akwpldusk" path="res://assets/sounds/Mind Palace.wav" id="21_1vbh8"]
+[ext_resource type="PackedScene" uid="uid://dxs3o5ntrcqm7" path="res://UI/settings_menu.tscn" id="22_tgksj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8t67i"]
 texture = ExtResource("4_7vuk6")
@@ -650,18 +651,6 @@ script = ExtResource("7_0fuu0")
 Player_Red = NodePath("../Player Red")
 Player_Blue = NodePath("../Player Blue")
 
-[node name="spirit_counter" parent="Players/Camera2D" unique_id=320775854 instance=ExtResource("17_fjeb0")]
-offset_left = -1063.0
-offset_top = -527.0
-offset_right = -1063.0
-offset_bottom = -527.0
-
-[node name="Inv_UI" parent="Players/Camera2D" unique_id=540233511 instance=ExtResource("18_tgksj")]
-offset_left = -1057.0
-offset_top = 363.0
-offset_right = -712.0
-offset_bottom = 492.0
-
 [node name="Ghost Floors" type="Node2D" parent="." unique_id=1152450060]
 
 [node name="ghostfloor4" parent="Ghost Floors" unique_id=625949323 instance=ExtResource("12_prlxl")]
@@ -689,5 +678,26 @@ position = Vector2(-2798, 762)
 
 [node name="AudioStreamPlayer - BGMusic" type="AudioStreamPlayer" parent="." unique_id=1338227308]
 stream = ExtResource("21_1vbh8")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1758176258]
+layer = 100
+
+[node name="Settings_Menu" parent="HUD" unique_id=1052549244 instance=ExtResource("22_tgksj")]
+offset_left = -111.0
+offset_top = -61.0
+offset_right = -111.0
+offset_bottom = -61.0
+
+[node name="spirit_counter" parent="HUD" unique_id=320775854 instance=ExtResource("17_fjeb0")]
+offset_left = 5.0
+offset_top = 2.0
+offset_right = -1915.0
+offset_bottom = -905.0
+
+[node name="Inv_UI" parent="HUD" unique_id=540233511 instance=ExtResource("18_tgksj")]
+offset_left = -297.36002
+offset_top = 780.76
+offset_right = 47.639984
+offset_bottom = 909.76
 
 [connection signal="building_toggle" from="BuildController" to="Players/Player Red" method="_on_build_controller_building_toggle"]

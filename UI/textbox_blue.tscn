@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctei1sg2g8lh"]
 
-[ext_resource type="Script" uid="uid://csdtnki30q0uc" path="res://scripts/player_textbox.gd" id="1_r21l3"]
+[ext_resource type="Script" uid="uid://csdtnki30q0uc" path="res://scripts/Textbox/player_textbox.gd" id="1_r21l3"]
 [ext_resource type="Texture2D" uid="uid://dmgw71wha8b1x" path="res://assets/Tutorial_HUD_V01/Tutorial_HUD_V01/Dialogue_Blue.png" id="2_rkjvu"]
 [ext_resource type="FontFile" uid="uid://dg7pcepu3xmyy" path="res://assets/fonts/Vincendo_Font_0_99/OpenType (.otf)/Vincendo-Regular.otf" id="3_ve1rr"]
 

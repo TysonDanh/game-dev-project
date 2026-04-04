@@ -23,6 +23,7 @@ func _on_interact():
 			animated_sprite_2d.play("break_cage")
 
 			get_tree().call_group("hud", "spirit_saved")
+			interactable.is_interactable = false
 			return
 	
 	

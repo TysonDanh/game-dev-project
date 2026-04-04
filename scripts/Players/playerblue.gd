@@ -18,7 +18,15 @@ var spirit_counter = 0
 
 var is_breaking := false
 
+
 func _physics_process(delta: float) -> void:
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody2D:
+			var rock = collision.get_collider()
+			rock.apply_central_force(collision.get_normal() * -50.0)
+			
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -73,6 +81,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Run")
 	else:
 		$AnimatedSprite2D.play("Idle")
+		
+	
 
 
 #Inventory stuff
@@ -81,3 +91,4 @@ func collect(item: InvItem):
 
 func remove(_index: int):
 	return inv.drop()
+	

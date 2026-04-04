@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp4em41r46ara"]
 
 [ext_resource type="PackedScene" uid="uid://dqryqt5bndl7i" path="res://scenes/playerblue.tscn" id="1_efq7q"]
-[ext_resource type="Script" uid="uid://7ry7q6x0m65f" path="res://scenes/camera_2d.gd" id="1_fun68"]
+[ext_resource type="Script" uid="uid://7ry7q6x0m65f" path="res://scripts/Players/camera_2d.gd" id="1_fun68"]
 [ext_resource type="PackedScene" uid="uid://ds68s3dfih6qm" path="res://scenes/player_red.tscn" id="2_fun68"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_efq7q"]

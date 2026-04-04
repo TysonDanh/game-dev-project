@@ -1,3 +1,4 @@
+#Class used for red player so red can't break walls/floors
 class_name InteractionComponent
 extends Node2D
 
@@ -6,7 +7,7 @@ extends Node2D
 var current_interactions:= []
 var can_interact := true
 
-
+#When user gives input and can_interact is true
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact_blue") and can_interact:
 		if current_interactions:
@@ -30,7 +31,7 @@ func _process(delta: float) -> void:
 		interact_label.hide()
 			
 		
-
+#
 func _sort_by_nearest(area1, area2):
 	var area1_dist = global_position.distance_to(area1.global_position)
 	var area2_dist = global_position.distance_to(area2.global_position)
