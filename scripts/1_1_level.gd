@@ -1,3 +1,4 @@
+#This is the same as 1_0 tutorial script, only difference is dialog Lines
 extends Node2D
 
 @export var character_a: Node2D

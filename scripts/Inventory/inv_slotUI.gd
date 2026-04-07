@@ -2,6 +2,7 @@ extends Panel
 
 @onready var item_display: TextureRect = $CenterContainer/Panel/item_display
 
+#Updates the Invslot visually
 func update(slot: InvSlot):
 	if slot == null or slot.item == null:
 		item_display.visible = false

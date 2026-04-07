@@ -1,3 +1,4 @@
+#Same as breakable floor but just for the wall
 extends Node2D
 
 @onready var interactable: Area2D = $Interactable
@@ -12,7 +13,6 @@ enum InteractionType { BREAK }
 var is_interactable := true
 var is_breakable := true
 var interact_name := "Break"
-
 var interact: Callable
 
 signal on_break(anim_name: String)

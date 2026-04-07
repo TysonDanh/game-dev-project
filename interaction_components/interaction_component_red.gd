@@ -1,5 +1,7 @@
+#Purpose of this is to give red interaction abilities, just not to break walls/floors
 extends InteractionComponent
 
+#Checks for interactions and calls for the nearest one close to red IF allowed
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact_red") and can_interact:
 		if current_interactions:
@@ -11,6 +13,7 @@ func _input(event: InputEvent) -> void:
 				await nearest.interact.call()
 				can_interact = true
 
+#If can interact and is allowed, show label else, don't
 func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
@@ -32,6 +35,7 @@ func _on_interact_range_area_entered(area: Area2D) -> void:
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	current_interactions.erase(area)
 
+#Checks to see if it is a breakable or just an interactable, if so return false
 func _is_allowed(area: Area2D) -> bool:
 	var parent = area.get_parent()
 	if parent == null:

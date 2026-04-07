@@ -1,3 +1,4 @@
+#The floor that guides the players placement of platforms
 extends Node2D
 
 @onready var sprite: Sprite2D = $Sprite2D

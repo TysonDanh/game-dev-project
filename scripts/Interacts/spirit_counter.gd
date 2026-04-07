@@ -1,3 +1,4 @@
+#Handles the spirit counted on each level
 extends Control
 
 @onready var counter_label = $NinePatchRect/spirit_counter

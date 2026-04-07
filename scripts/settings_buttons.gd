@@ -1,3 +1,4 @@
+#Handles the button presses for the main menu
 extends Control
 
 func _ready() -> void:

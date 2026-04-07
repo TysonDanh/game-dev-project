@@ -1,3 +1,4 @@
+#Interactble Key
 extends Node2D
 
 @onready var interactable: Area2D = $Interactable
@@ -20,6 +21,3 @@ func toggle_level():
 				animated_Sprite2D.play("key")
 				$AnimatedSprite2D.visible = false
 				queue_free()
-			else:
-				print("inv full")
-	

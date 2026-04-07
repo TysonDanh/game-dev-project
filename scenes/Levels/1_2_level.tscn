@@ -832,16 +832,16 @@ offset_right = -111.0
 offset_bottom = -61.0
 
 [node name="spirit_counter" parent="HUD" unique_id=320775854 instance=ExtResource("10_jee4g")]
-offset_left = 5.0
+offset_left = 52.0
 offset_top = 2.0
-offset_right = -1915.0
+offset_right = -1868.0
 offset_bottom = -905.0
 
 [node name="Inv_UI" parent="HUD" unique_id=540233511 instance=ExtResource("9_m2iuc")]
-offset_left = -297.36002
-offset_top = 780.76
-offset_right = 47.639984
-offset_bottom = 909.76
+offset_left = -226.36002
+offset_top = 785.76
+offset_right = 118.639984
+offset_bottom = 914.76
 
 [node name="BuildController" parent="." unique_id=1993715933 instance=ExtResource("1_0budx")]
 position = Vector2(-11, -269)

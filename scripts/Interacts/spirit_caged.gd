@@ -1,3 +1,4 @@
+#Interactable for the caged spirit
 extends Node2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D

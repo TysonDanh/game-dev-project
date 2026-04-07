@@ -1,3 +1,4 @@
+#Lever Interactable
 extends Area2D
 
 @onready var interactable: Area2D = $Interactable
@@ -11,6 +12,7 @@ var lever_on := false
 func _ready():
 	interactable.interact = _on_interact
 	
+#Lever to open the door
 func _on_interact():
 	if lever_on:
 		return

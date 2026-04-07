@@ -1,3 +1,4 @@
+#Handles how the dialog works with expandable textboxes
 extends Node
 
 @onready var text_box_scene = preload("res://UI/textbox.tscn")
@@ -15,7 +16,6 @@ class PlayerDialogConfig:
 var dialog_lines: Array = []
 var dialog_speakers: Array = []
 var dialog_heights: Array = []
-var dialog_nodes: Array = []
 var dialog_configs: Array = []   
 var current_line_index = 0
 var text_box
@@ -109,19 +109,15 @@ func _unhandled_input(event):
 func advance_dialog():
 	if not is_dialog_active:
 		return
-		
 	current_line_index += 1
-	
 	if current_line_index >= dialog_lines.size():
 		_end()
 		return
-	
 	_show_text_box()
-
 
 func dialog_finished():
 	_end()
-	
+
 func _end():
 	is_dialog_active = false
 	current_line_index = 0

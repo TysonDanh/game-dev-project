@@ -14,7 +14,7 @@ extends Node2D
 
 signal building_toggle(is_on: bool)
 
-# Types of building.
+# types of building.
 enum BuildType { WALL, FLOOR }
 
 var selected_build: BuildType = BuildType.WALL

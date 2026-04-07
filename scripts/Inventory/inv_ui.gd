@@ -5,16 +5,18 @@ extends Control
 @export var player: CharacterBody2D
 var is_open = false
 
+#update the inv visually
 func _ready():
 	inv.update.connect(update_slots)
 	update_slots()
 	
+#Updates the slots in inv
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
-	
+
+#When drop button pressed, drop item below player's feet
 func _process(_delta):
-			
 	if Input.is_action_just_pressed("drop"):
 		var removeitem = inv.drop()
 		if removeitem != null:
@@ -23,12 +25,13 @@ func _process(_delta):
 			if player:                
 				dropitem(removeitem, player.global_position)
 	
-	
+#Type of items that can be dropped
 const DROP_SCENES: Dictionary = {
 	"rock": preload("res://scenes/Breakable/rock.tscn"),
 	"key": preload("res://scenes/Interacts/key.tscn")
 }
 
+#Checks to see if there's item, if not checks next slot in array
 func dropitem(item: InvItem, position: Vector2):
 	if item == null:
 		return

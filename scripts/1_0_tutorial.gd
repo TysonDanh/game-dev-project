@@ -1,3 +1,4 @@
+#Used for handling the dialogs on level 1-0 Tutorial level
 extends Node2D
 
 @export var character_a: Node2D
@@ -12,12 +13,15 @@ var checkpoint_done = false
 @export var player: Node2D
 @export var checkpoint_marker: Node2D
 
+#Plays music, await get_tree().process_frame is to wait for thinks to load
+#or else it'll crash the game, then start dialog, if there is any
 func _ready():
 	audioMusicBG.play()
 	await get_tree().process_frame
 	await get_tree().process_frame
 	_start_intro_dialog()
 
+#Checks for checkpoint for new dialogs, if there is dialog play it at that checkpoint
 func _process(_delta):
 	if checkpoint_done or not is_instance_valid(player):
 		return
@@ -27,7 +31,9 @@ func _process(_delta):
 		checkpoint_done = true
 		_start_checkpoint_dialog()
 		
-
+#Handles the intro dialog when first join in level if there is any.
+#Will play back and forth, blue talking first then red or other way around
+#depending how you set up char_A and char_B in inspector
 func _start_intro_dialog():
 	if intro_done:
 		return
@@ -46,6 +52,8 @@ func _start_intro_dialog():
 	]
 	DialogManager.start_conversation(lines, config_a, config_b)
 
+#Handles like the intro dialog, but for checkpoints, when checkpoint is reached,
+#play new dialog
 func _start_checkpoint_dialog():
 	var config_a = DialogManager.PlayerDialogConfig.new(
 		character_a, 100,

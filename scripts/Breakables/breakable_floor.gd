@@ -1,3 +1,4 @@
+#Controls how the breakable floor will function
 extends Node2D
 
 @onready var interactable: Area2D = $Interactable
@@ -16,16 +17,17 @@ var interact: Callable
 
 signal on_break(anim_name: String)
 
-
+#give interaction to floor
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
-
+#Handles how the floor breaks
 func _on_interact():
 	$Sprite2D.visible = false
 	$CollisionShape2D.disabled = true
 	$Interactable.emit_signal("on_break", "break_floor")
 	
+	#handles the rocks that drop after breaking
 	for i in  range(rock_count):
 		var rock = rock_scene.instantiate() as RigidBody2D
 		rock.global_position = global_position + Vector2(randf_range(-16, 16), randf_range(-48, -16))

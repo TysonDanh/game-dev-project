@@ -19,8 +19,8 @@ func _input(event: InputEvent) -> void:
 			can_interact = true
 
 
-
-func _process(delta: float) -> void:
+#Checks to see if it's a interactable, if so, show label, if not, hide it
+func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
@@ -31,13 +31,13 @@ func _process(delta: float) -> void:
 		interact_label.hide()
 			
 		
-#
+#Will sort which interactable is closer
 func _sort_by_nearest(area1, area2):
 	var area1_dist = global_position.distance_to(area1.global_position)
 	var area2_dist = global_position.distance_to(area2.global_position)
 	return area1_dist < area2_dist
 	
-
+#If in the interactable, return true, if it has on_break animation, do animation
 func _on_interact_range_area_entered(area: Area2D) -> void:
 	if area in current_interactions:
 		return
@@ -45,12 +45,13 @@ func _on_interact_range_area_entered(area: Area2D) -> void:
 	if area.has_signal("on_break"):
 		area.on_break.connect(_on_break_animation)
 
-
+#Once interactble is done, get rid of label, if breakable, then stop animation
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	current_interactions.erase(area)
 	if area.has_signal("on_break") and area.on_break.is_connected(_on_break_animation):
 		area.on_break.disconnect(_on_break_animation)
-	
+
+#The animation for blue to break walls and floors
 func _on_break_animation(anim_name: String):
 	get_parent().is_breaking = true
 	get_parent().get_node("AnimatedSprite2D").play(anim_name)

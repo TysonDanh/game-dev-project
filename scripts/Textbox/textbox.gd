@@ -1,3 +1,4 @@
+#This handles like the player textbox but for NPC instead.
 extends MarginContainer
 
 @onready var label = $MarginContainer/Label
@@ -30,7 +31,6 @@ func display_text(text_to_display: String):
 	timer.stop()
 	auto_close_timer.stop()
 
-	# Hide while we measure and position — prevents the flicker
 	hide()
 
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -47,7 +47,6 @@ func display_text(text_to_display: String):
 	label.text = ""
 	await get_tree().process_frame
 
-	# Now reveal and start typing
 	show()
 	_display_letter()
 

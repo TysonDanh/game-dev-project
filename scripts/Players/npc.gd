@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interactable: Area2D = $Interactable
 
+#Dialog lines for every level, works by going to the level and adjust their
+#array of lines in inspector
 @export var lines: Array[String] = [
 	#Lines for 1-0, first NPC
 	"Who are you? How did you get into the Temple?",
@@ -37,7 +39,7 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	animated_sprite_2d.play("idle")
 	
-	
+#on interact, NPC plays their lines
 func _on_interact():
 	DialogManager.start_dialog(global_position, lines)
 	

@@ -6,7 +6,7 @@ signal update
 
 @export var slots: Array[InvSlot]
 
-
+#Handles the pick up the the item
 func insert(item: InvItem):
 	var emptyslots = slots.filter(func(slot): return slot.item == null)
 	if !emptyslots.is_empty():
@@ -18,7 +18,7 @@ func insert(item: InvItem):
 		slots[index] = new_slot
 		update.emit()
 		return true
-
+#Handles the drop item
 func drop() -> InvItem:
 	for i in range(slots.size()):
 		var slot = slots[i]
@@ -30,16 +30,16 @@ func drop() -> InvItem:
 			slots[i] = new_slot
 			update.emit()
 			return removeitem
-	
-	print("empty inv")
 	return null
 
+#Checks if item is in inv, for Building
 func has_item(item: InvItem) -> bool:
 	for slot in slots:
 		if slot.item == item:
 			return true
 	return false
 	
+#Removes the items to be used for building
 func remove_item(item: InvItem) -> bool:
 	for i in range(slots.size()):
 		var slot = slots[i]

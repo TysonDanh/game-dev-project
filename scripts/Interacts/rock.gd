@@ -1,3 +1,4 @@
+#Interactable Rock
 extends RigidBody2D
 
 @onready var interactable: Area2D = $Interactable
